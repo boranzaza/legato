@@ -11,7 +11,7 @@
 <h4>Ensemble type</h4>
 <p><%= @musician.ensemble_type %></p>
 
-<h3>CAD <%= @musician.price %></h3>
+<span><h3>$<%= @musician.price %></h3><p> per concert</p></span>
 
 <%= link_to "Video", @musician.video %>
 
