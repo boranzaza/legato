@@ -11,11 +11,11 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :phone_number, :address, :is_musician, presence: true
 
   # Comment if not needed or if its in conflict with our current seed
-  validates :photo, format: { with: URI.regexp }, if: 'photo.present?'
-  validates :video, format: { with: URI.regexp }, if: 'video.present?'
-  validates :facebook, format: { with: URI.regexp }, if: 'facebook.present?'
-  validates :youtube, format: { with: URI.regexp }, if: 'youtube.present?'
-  validates :website, format: { with: URI.regexp }, if: 'website.present?'
-  validates :instagram, format: { with: URI.regexp }, if: 'instagram.present?'
+  # validates :photo, format: { with: URI.regexp }, if: 'photo.present?'
+  # validates :video, format: { with: URI.regexp }, if: 'video.present?'
+  # validates :facebook, format: { with: URI.regexp }, if: 'facebook.present?'
+  # validates :youtube, format: { with: URI.regexp }, if: 'youtube.present?'
+  # validates :website, format: { with: URI.regexp }, if: 'website.present?'
+  # validates :instagram, format: { with: URI.regexp }, if: 'instagram.present?'
 
 end
