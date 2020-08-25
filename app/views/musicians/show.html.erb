@@ -1,4 +1,30 @@
 <h1>Musicians#show</h1>
 <p>Find me in app/views/musicians/show.html.erb</p>
-<%= link_to "Browse Musicians", musicians_index_path %>
 
+<%= image_tag(@musician.photo, height: '200') %>
+<h2><%= @musician.first_name %> <%= @musician.last_name %></h2>
+
+<h3>About</h3>
+<p><%= @musician.bio %></p>
+<h4>Instruments</h4>
+<p><%= @musician.instruments %></p>
+<h4>Ensemble type</h4>
+<p><%= @musician.ensemble_type %></p>
+
+<h3>CAD <%= @musician.price %></h3>
+
+<%= link_to "Video", @musician.video %>
+
+<h3>Contact</h3>
+<p>Email: <%= @musician.email %></p>
+<p>Phone number: <%= @musician.email %></p>
+<%= link_to "Website", @musician.video %>
+
+<h3>On Social Media</h3>
+<div class="links-to-socials" style="display: inline; color: #69748C" >
+  <%= link_to "<i class="fab fa-facebook"></i>", @musician.facebook %>
+  <%= link_to "<i class="fab fa-youtube"></i>", @musician.youtube %>
+  <%= link_to "<i class="fab fa-instagram"></i>", @musician.instagram %>
+</div>
+
+<%= link_to "Browse Musicians", musicians_index_path %>
