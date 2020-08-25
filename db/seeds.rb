@@ -15,6 +15,7 @@ nancy_shapiro = User.create!(first_name: "Nancy",
                           password: "password",
                           phone_number: "819-399-1919",
                           address: "1000 The Boulevard, Westmount, Canada, B9C9D9",
+                          is_musician: false
 
 )
 
@@ -41,6 +42,7 @@ boran_zaza = User.create!(first_name: "Boran",
                           repertoire_1_length: "50 minutes",
                           repertoire_2: "Armenians colours",
                           repertoire_2_length: "50 minutes",
+                          is_musician: true
 
 )
 
@@ -65,6 +67,7 @@ michel_alexandre_broekaert = User.create!(first_name: "Michel-Alexandre",
                                           repertoire_1_length: "60 minutes",
                                           repertoire_2: "Russian moods",
                                           repertoire_2_length: "60 minutes",
+                                          is_musician: true
 
 )
 
@@ -95,6 +98,7 @@ noemie_raymond_friset = User.create!(first_name: "Noémie",
                                     repertoire_1_length: "60 minutes",
                                     repertoire_2: "Cello Virtuoso",
                                     repertoire_2_length: "50 minutes",
+                                    is_musician: true
 
 )
 
@@ -123,6 +127,7 @@ quatuor_despax = User.create!(first_name: "Quatuor",
                               repertoire_1_length: "70 minutes",
                               repertoire_2: "Shostakovich à l’honneur!",
                               repertoire_2_length: "65 minutes",
+                              is_musician: true
 
 )
 
@@ -146,6 +151,7 @@ carlos_avila = User.create!(first_name: "Carlos",
                             repertoire_1_length: "70 minutes",
                             repertoire_2: "The world of Prokofiev",
                             repertoire_2_length: "70 minutes",
+                            is_musician: true
 
 )
 
@@ -169,6 +175,7 @@ trio_de_l_ile = User.create!(first_name: "Trio",
                             repertoire_1_length: "60 minutes",
                             repertoire_2: "When female composers shines!",
                             repertoire_2_length: "70 minutes",
+                            is_musician: true
 
 )
 
