@@ -9,18 +9,18 @@ Booking.destroy_all
 User.destroy_all
 
 #here is our persona, our only customer:
-nancy_shapiro = User.create!(first_name: "Nancy",
+nancy_shapiro = User.create!({first_name: "Nancy",
                           last_name: "Shapiro",
                           email: "nancy_money@gmail.com",
                           password: "password",
                           phone_number: "819-399-1919",
                           address: "1000 The Boulevard, Westmount, Canada, B9C9D9",
-                          is_musician: false
+                          is_musician: false}
 
 )
 
 #and here are our 6 musicians/groups
-boran_zaza = User.create!(first_name: "Boran",
+boran_zaza = User.create!({first_name: "Boran",
                           last_name: "Zaza",
                           email: "contact@boranzaza.com",
                           password: "password",
@@ -42,11 +42,11 @@ boran_zaza = User.create!(first_name: "Boran",
                           repertoire_1_length: "50 minutes",
                           repertoire_2: "Armenians colours",
                           repertoire_2_length: "50 minutes",
-                          is_musician: true
+                          is_musician: true}
 
 )
 
-michel_alexandre_broekaert = User.create!(first_name: "Michel-Alexandre",
+michel_alexandre_broekaert = User.create!({first_name: "Michel-Alexandre",
                                           last_name: "Broekaert",
                                           email: "contact@broekaert.space",
                                           password: "password",
@@ -67,11 +67,11 @@ michel_alexandre_broekaert = User.create!(first_name: "Michel-Alexandre",
                                           repertoire_1_length: "60 minutes",
                                           repertoire_2: "Russian moods",
                                           repertoire_2_length: "60 minutes",
-                                          is_musician: true
+                                          is_musician: true}
 
 )
 
-noemie_raymond_friset = User.create!(first_name: "Noémie",
+noemie_raymond_friset = User.create!({first_name: "Noémie",
                                     last_name: "Raymond-Friset",
                                     email: "no_4cello@gmail.com",
                                     password:  "password",
@@ -98,11 +98,10 @@ noemie_raymond_friset = User.create!(first_name: "Noémie",
                                     repertoire_1_length: "60 minutes",
                                     repertoire_2: "Cello Virtuoso",
                                     repertoire_2_length: "50 minutes",
-                                    is_musician: true
-
+                                    is_musician: true}
 )
 
-quatuor_despax = User.create!(first_name: "Quatuor",
+quatuor_despax = User.create!({first_name: "Quatuor",
                               last_name: "Despax",
                               email: "quatuordespax@yahoo.fr",
                               password: "password",
@@ -127,7 +126,7 @@ quatuor_despax = User.create!(first_name: "Quatuor",
                               repertoire_1_length: "70 minutes",
                               repertoire_2: "Shostakovich à l’honneur!",
                               repertoire_2_length: "65 minutes",
-                              is_musician: true
+                              is_musician: true}
 
 )
 
