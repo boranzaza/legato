@@ -8,7 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :password, presence: true, length: { minimum: 8 }
-  validates :first_name, :last_name, :phone_number, :address, :is_musician, presence: true
+  validates :first_name, :last_name, :phone_number, :address, presence: true
 
   # Comment if not needed or if its in conflict with our current seed
   # validates :photo, format: { with: URI.regexp }, if: 'photo.present?'

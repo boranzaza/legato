@@ -5,12 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#  publically visible on github... just so you know
+
 Booking.destroy_all
 User.destroy_all
 
-#here is our persona, our only customer:
+# here is our persona, our only customer:
 nancy_shapiro = User.create!(first_name: "Nancy",
-                          last_name: "Shapiro",
+                          last_name: "S",
                           email: "nancy_money@gmail.com",
                           password: "password",
                           phone_number: "819-399-1919",
