@@ -18,13 +18,19 @@
 <h3>Contact</h3>
 <p>Email: <%= @musician.email %></p>
 <p>Phone number: <%= @musician.email %></p>
-<%= link_to "Website", @musician.video %>
+<%= link_to "Website", @musician.website %>
 
 <h3>On Social Media</h3>
 <div class="links-to-socials" style="display: inline; color: #69748C" >
-  <%= link_to "<i class="fab fa-facebook"></i>", @musician.facebook %>
-  <%= link_to "<i class="fab fa-youtube"></i>", @musician.youtube %>
-  <%= link_to "<i class="fab fa-instagram"></i>", @musician.instagram %>
+  <%= link_to @musician.facebook do %>
+    <i class="fab fa-facebook"></i>
+  <% end %>
+  <%= link_to @musician.youtube do %>
+    <i class="fab fa-youtube"></i>
+  <% end %>
+  <%= link_to @musician.instagram do %>
+    <i class="fab fa-instagram"></i>
+  <% end %>
 </div>
 
-<%= link_to "Browse Musicians", musicians_index_path %>
+<%= link_to "Browse Musicians", musicians_path %>

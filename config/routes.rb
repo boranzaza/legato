@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  get 'musicians/index'
-  get 'musicians/show'
+  # get 'musicians/index'
+  # get 'musicians/show'
+
+  resources :musicians, only: [:index, :show]
+
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
