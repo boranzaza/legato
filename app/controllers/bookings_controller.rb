@@ -18,7 +18,8 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @bookings = Booking.all.order("created_at DESC")
+    @bookings = Booking.where(musician_id: current_user.id).reverse
+    # @current_bookings = Booking.where daytime
     @bookings.each do |booking|
       booking.status
     end
