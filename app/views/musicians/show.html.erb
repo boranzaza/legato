@@ -1,7 +1,7 @@
 <h1>Musicians#show</h1>
 <p>Find me in app/views/musicians/show.html.erb</p>
 
-<%= image_tag(@musician.photo, height: '200') %>
+<%= cl_image_tag(@musician.photo, height: '200') %>
 <h2><%= @musician.first_name %> <%= @musician.last_name %></h2>
 
 <h3>About</h3>
