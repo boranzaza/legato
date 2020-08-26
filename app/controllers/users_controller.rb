@@ -33,7 +33,8 @@ class UsersController < ApplicationController
       :repertoire_1,
       :repertoire_1_length,
       :repertoire_2,
-      :repertoire_2_length
+      :repertoire_2_length,
+      :is_musician
       )
   end
 end
