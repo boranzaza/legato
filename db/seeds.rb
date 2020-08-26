@@ -8,7 +8,7 @@
 Booking.destroy_all
 User.destroy_all
 
-# here is our persona, our only customer:
+#here is our persona, our only customer:
 nancy_shapiro = User.create!(first_name: "Nancy",
                           last_name: "Shapiro",
                           email: "nancy_money@gmail.com",
