@@ -4,10 +4,12 @@ class BookingsController < ApplicationController
 
 
   def index
-    @bookings = Booking.where(musician_id: current_user.id).reverse
-    @bookings.each do |booking|
-      booking.status
-    end
+    @bookings_musician = Booking.where(musician_id: current_user.id).reverse
+    @bookings_customer = Booking.where(customer_id: current_user.id).reverse
+
+    # @bookings.each do |booking|
+    #   booking.status
+    # end
   end
 
   def show
@@ -50,7 +52,7 @@ class BookingsController < ApplicationController
       redirect_to new_user_booking_path(params[:booking][:musician_id])
     end
   end
-  
+
   def update
     @booking.update(booking_params)
     redirect_to bookings_path
