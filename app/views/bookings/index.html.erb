@@ -6,7 +6,7 @@
 <div>
   <% @bookings.each do |booking| %>
     <p>Booking Request for: <%= booking.musician.full_name %></p>
-    <p>Repertoire: <%= booking.repertoire_name %> | <%= booking.repertoire_length %> </p>
+    <p>Repertoire: <%= booking.repertoire_name %> | <%= booking.repertoire_length %> minutes </p>
     <p>Requested by: <%= booking.customer.full_name %></p>
     <p>Date and time: <%= booking.date_time.strftime('%F at: %H:%M sharp!') %></p>
     <p>Address: <%= booking.location %></p>

@@ -15,7 +15,12 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @customer_id = User.find(params[:user_id])
+    @musician = User.find(params[:user_id])
+    if @musician == nil
+      @musician = User.find(params[:booking][:musician_id])
+    end
+    @musician_id = @musician.id
+    @customer_id = current_user.id
     @booking = Booking.new
   end
 
@@ -23,15 +28,29 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @booking.customer_id = current_user
+    year = params["booking"]["date_time(1i)"].to_i
+    month = params["booking"]["date_time(2i)"].to_i
+    day = params["booking"]["date_time(3i)"].to_i
+    hour = params["booking"]["date_time(4i)"].to_i
+    minute = params["booking"]["date_time(5i)"].to_i
+    @date_time = DateTime.new(year, month, day, hour, minute)
+
+    @booking = Booking.new({
+      date_time: @date_time,
+      status: nil,
+      location: params[:booking][:location],
+      comments: params[:booking][:comments],
+      customer_id: current_user.id,
+      musician_id: params[:booking][:musician_id]})
+    @booking.customer_id = current_user.id
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path(@booking)
     else
-      render :new
+      raise
+      redirect_to new_user_booking_path(params[:booking][:musician_id])
     end
   end
-
+  
   def update
     @booking.update(booking_params)
     redirect_to bookings_path
