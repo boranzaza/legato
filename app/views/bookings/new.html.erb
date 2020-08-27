@@ -6,14 +6,20 @@
 <!-- f.input to show textbox -->
 <!-- f.submit -->
 
+<div class="container">
 
 <h1>You're trying to book <strong> <%= @customer_id.first_name %> </strong></h1>
 
 <%= simple_form_for @booking do |f| %>
   <%= f.input :date_time, as: :date %>
-  <%= f.button :submit %>
+  <%= f.input :location, label: 'What is the address ?' %>
+  <%= f.input :comments, label: 'Do you have additional comments ?', placeholder: 'For example dress code ... ', as: :text %>
+
+  <%= f.submit 'Book' %>
+  <%= f.submit 'Cancel' %>
 <% end %>
 
+</div>
 <!-- TO DO: do a button instead of URL (in css + back code) -->
 
 <!-- when linking back end and front end ; buttons are buttons and they're not a part of anything else. -->
