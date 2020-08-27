@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    a = Booking.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
 
   def new
@@ -50,7 +50,7 @@ class BookingsController < ApplicationController
       redirect_to new_user_booking_path(params[:booking][:musician_id])
     end
   end
-  
+
   def update
     @booking.update(booking_params)
     redirect_to bookings_path
@@ -75,16 +75,6 @@ def destroy
   redirect_to bookings_path
 end
 
-
-
-#   # 1. Display list with indices
-#     display_tasks
-#     # 2. Ask user for index
-#     index = @view.ask_user_for_index
-#     # 3. Remove from repository
-#     @repository.remove(index)
-
-# no need for app/views/restaurants/destroy.html.erb
 
   private
 
