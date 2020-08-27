@@ -1,10 +1,13 @@
-<div class="booking-form">
-  <%= simple_form_for @booking, url: user_bookings_path(current_user) do |t|%>
-    <%= t.input :musician_id, as: :string, input_html: { value: @musician.id, class: "d-none" }, label: false %>
-    <%= t.input :date_time, as: :date %>
-    <%= t.input :date_time, as: :time %>
-    <%= t.input :location, as: :string, input_html: { value: current_user.address } %>
-    <%= t.input :comments, as: :text %>
-    <%= t.submit "Book" %>
-  <%end%>
+<div class="container">
+  <div class="booking-form">
+    <%= simple_form_for @booking, url: user_bookings_path(current_user) do |t|%>
+      <%= t.input :musician_id, as: :string, input_html: { value: @musician.id, class: "d-none" }, label: false %>
+      <%= t.input :date_time, as: :date %>
+      <%= t.input :date_time, as: :time %>
+      <%= t.input :location, as: :string, input_html: { value: current_user.address } %>
+      <%= t.input :comments, as: :text %>
+      <%= t.submit "Book" %>
+    <%end%>
+  </div>
 </div>
+
