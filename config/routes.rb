@@ -9,4 +9,8 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, except: [:new, :create]
+
+  patch '/approve', to: 'bookings#approve', as: 'approve'
+  patch '/reject', to: 'bookings#reject', as: 'reject'
+
 end

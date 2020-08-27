@@ -4,17 +4,31 @@
 <!-- Who booked me today? -->
 
 <div>
-  <% @bookings.each do |booking| %>
-    <p>Booking Request for: <%= booking.musician.full_name %></p>
-    <p>Repertoire: <%= booking.repertoire_name %> | <%= booking.repertoire_length %> minutes </p>
-    <p>Requested by: <%= booking.customer.full_name %></p>
-    <p>Date and time: <%= booking.date_time.strftime('%F at: %H:%M sharp!') %></p>
-    <p>Address: <%= booking.location %></p>
-    <p>Phone: <%= booking.customer.phone_number %></p>
-    <p>Comments: <%= booking.comments %></p>
-    <p><%= booking.status ? "Accepted" : "Decline" %></p>
-
-  <% end %>
+  <% if current_user.is_musician %>
+    <% @bookings_musician.each do |booking| %>
+      <p>Booking Request for: <%= booking.musician.full_name %></p>
+      <p>Repertoire: <%= booking.repertoire_name %> | <%= booking.repertoire_length %> minutes </p>
+      <p>Requested by: <%= booking.customer.full_name %></p>
+      <p>Date and time: <%= booking.date_time.strftime('%F at: %H:%M sharp!') %></p>
+      <p>Address: <%= booking.location %></p>
+      <p>Phone: <%= booking.customer.phone_number %></p>
+      <p>Comments: <%= booking.comments %></p>
+      <p><%= link_to 'Accept', approve_path(id: booking.id), method: :patch %></p>
+          <!-- reject -->
+      <p> <%= link_to 'Decline', reject_path(id: booking.id), method: :patch %></p>
+    <% end %>
+  <% else %>
+    <% @bookings_customer.each do |booking| %>
+      <p>Booking Request for: <%= booking.musician.full_name %></p>
+      <p>Repertoire: <%= booking.repertoire_name %> | <%= booking.repertoire_length %> </p>
+      <p>Date and time: <%= booking.date_time.strftime('%F at: %H:%M sharp!') %></p>
+      <p>Address: <%= booking.location %></p>
+      <p>Comments: <%= booking.comments %></p>
+      <p>Booking status: <%= booking.status %></p>
+      <p>Price: <%= User.find(booking.musician_id).price %></p>
+      <p> <%= link_to "CANCEL BOOKING", booking_path(booking), method: :delete %> </p>  <!-- add here the destroy method -->
+      <% end %>
+  <% end  %>
 </div>
 <br>
 <%= link_to "Back to Homepage", root_path %>
