@@ -7,10 +7,13 @@
 <!-- f.submit -->
 
 
-<h1>You're trying to book <strong> <%= @customer_id.first_name%> </strong></h1>
+<h1>You're trying to book <strong> <%= @customer_id.first_name %> </strong></h1>
 
-<%= simple_form for @bookings, url: user_bookings_path(@customer_id), method: :post do |t|%>
-  <%= t.input :date_time, as: :date%>
-<%end%>
+<%= simple_form_for @booking do |f| %>
+  <%= f.input :date_time, as: :date %>
+  <%= f.button :submit %>
+<% end %>
 
+<!-- TO DO: do a button instead of URL (in css + back code) -->
 
+<!-- when linking back end and front end ; buttons are buttons and they're not a part of anything else. -->
