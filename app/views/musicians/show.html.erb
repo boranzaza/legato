@@ -14,11 +14,14 @@
 
 <span><h3>$<%= @musician.price %></h3><p> per concert</p></span>
 
+<p> <strong>Repertoire 1:</strong>  <%= @musician.repertoire_1 %> | <%= @musician.repertoire_1_length %> minutes</p>
+<p>  <strong>Repertoire 2:</strong>  <%= @musician.repertoire_2 %> | <%= @musician.repertoire_2_length %> minutes</p>
+
 <%= link_to "Video", @musician.video %>
 
 <h3>Contact</h3>
 <p>Email: <%= @musician.email %></p>
-<p>Phone number: <%= @musician.email %></p>
+<p>Phone number: <%= @musician.phone_number %></p>
 <%= link_to "Website", @musician.website %>
 
 <h3>On Social Media</h3>
