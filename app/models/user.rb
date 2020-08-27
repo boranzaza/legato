@@ -18,5 +18,9 @@ class User < ApplicationRecord
   # validates :youtube, format: { with: URI.regexp }, if: 'youtube.present?'
   # validates :website, format: { with: URI.regexp }, if: 'website.present?'
   # validates :instagram, format: { with: URI.regexp }, if: 'instagram.present?'
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+
+  end
 
 end

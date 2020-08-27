@@ -24,6 +24,14 @@ class BookingsController < ApplicationController
     end
   end
 
+  def index
+    @bookings = Booking.where(musician_id: current_user.id).reverse
+    # @current_bookings = Booking.where daytime
+    @bookings.each do |booking|
+      booking.status
+    end
+  end
+  
   def show
   end
 

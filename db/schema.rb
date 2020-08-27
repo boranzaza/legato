@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_08_26_213130) do
 
   # These are extensions that must be enabled in order to support this database
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_08_26_213130) do
     t.bigint "musician_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "repertoire_number"
     t.index ["customer_id"], name: "index_bookings_on_customer_id"
     t.index ["musician_id"], name: "index_bookings_on_musician_id"
   end
