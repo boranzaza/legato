@@ -1,0 +1,33 @@
+
+
+
+<%= link_to("cancel", "/bookings/#{@booking.id}", {method: :delete} ) %>
+
+<h1>Confirmation</h1>
+
+<!-- <div class="user-show-card">
+    <br>
+      <p>Thank you for requesting a booking with, <%= "#{User.find(@booking.customer_id).first_name}"%>! Below are your booking details:</p>
+      <p> <strong>Plant Sitter:</strong>  <%= "#{User.find(@booking.plant_sitter_id).first_name} #{User.find(@booking.plant_sitter_id).last_name}" %></p>
+      <p> <strong> Booking start date:</strong> <%= @booking.start_date %></p>
+      <p> <strong>Booking end date:</strong> <%= @booking.end_date %></p>
+      <p> <strong>Price:</strong> $<%=User.find(@booking.plant_sitter_id).price %> per day</p>
+
+    <% if @booking.status == true %>
+      <p>Booking status: Approved</p>
+    <% elsif @booking.status == false %>
+      <p>Booking status: Rejected</p>
+    <% else %>
+      <p><strong>  Booking status:</strong>  <strong> <em> Pending.</em></strong> Once the booking is approved by your plant sitter, you will receive a notification by email!</p>
+    <% end %>
+    <br>
+    <div>
+      <%= link_to "Go back to my bookings", bookings_path, class: "btn-purple" %>
+    </div>
+    <br>
+    <div>
+      <%= link_to "Go back to plantsitters", users_path, class: "btn-purple" %>
+    </div>
+    <br>
+</div>
+ -->
