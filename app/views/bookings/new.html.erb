@@ -8,13 +8,18 @@
 
 <div class="container">
 
-<h1>You're trying to book <strong> <%= @customer_id.first_name %> </strong></h1>
+<h1><strong>BOOKING DETAILS</strong></h1>
 
+<!-- need to add repertoire options too-->
+
+<p> For what date and time would you like to book </p>
 <%= simple_form_for @booking do |f| %>
-  <%= f.input :date_time, as: :date %>
+  <%= f.input :date_time, as: :date, label: 'Start Date' %>
+  <%= f.input :date_time, as: :date, label: 'End Date' %>
   <%= f.input :location, label: 'What is the address ?' %>
   <%= f.input :comments, label: 'Do you have additional comments ?', placeholder: 'For example dress code ... ', as: :text %>
 
+<h1>You are trying to book <strong> <%= @customer_id.first_name %> </strong></h1>
   <%= f.submit 'Book' %>
   <%= f.submit 'Cancel' %>
 <% end %>
