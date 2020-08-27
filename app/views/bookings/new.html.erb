@@ -1,0 +1,16 @@
+<!-- do things carms told me to do -->
+<!-- simple form uses its own tags -->
+<!-- 3-5 input fields; checkbox or select? dropbown or text box?-->
+<!-- day time -->
+<!-- f.input -->
+<!-- f.input to show textbox -->
+<!-- f.submit -->
+
+
+<h1>You're trying to book <strong> <%= @customer_id.first_name%> </strong></h1>
+
+<%= simple_form for @bookings, url: user_bookings_path(@customer_id), method: :post do |t|%>
+  <%= t.input :date_time, as: :date%>
+<%end%>
+
+

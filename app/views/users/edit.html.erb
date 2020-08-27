@@ -1,0 +1,12 @@
+<h1>Hello, wanna edit some stuff?</h1>
+
+<% if current_user.id == @user.id %>
+  <% if current_user.is_musician %>
+    <%= render "users/edit_musician" %>
+  <% else %>
+    <%= render "users/edit_user" %>
+  <% end %>
+<% else %>
+  <p>Nice try, you cheeky little possum! You are not authorized to change this user's data!</p>
+<% end %>
+

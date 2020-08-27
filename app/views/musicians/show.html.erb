@@ -1,4 +1,5 @@
 <h1>Musicians#show</h1>
+<!-- paragraph below is super helpful -->
 <p>Find me in app/views/musicians/show.html.erb</p>
 
 <%= image_tag(@musician.photo, height: '200') %>
@@ -32,5 +33,9 @@
     <i class="fab fa-instagram"></i>
   <% end %>
 </div>
-
+<br>
 <%= link_to "Browse Musicians", musicians_path %>
+<%= link_to "Book this Artist", new_user_booking_path(@musician) %>
+<!-- add a new link to go to Bookings.New Page; creates a link to go to specific musician page, should call the variable id -->
+<!-- to find url, run rails routes -->
+<!-- /users/users_id/bookings/new -->

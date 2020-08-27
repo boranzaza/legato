@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  # get 'musicians/index'
-  # get 'musicians/show'
 
-  resources :musicians, only: [:index, :show]
+  resources :musicians, only: [:index, :show, :edit, :update]
 
   devise_for :users
   root to: 'pages#home'
