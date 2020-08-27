@@ -4,17 +4,34 @@
 <!-- Who booked me today? -->
 
 <div>
-  <% @bookings.each do |booking| %>
-    <p>Booking Request for: <%= booking.musician.full_name %></p>
-    <p>Repertoire: <%= booking.repertoire_name %> | <%= booking.repertoire_length %> </p>
-    <p>Requested by: <%= booking.customer.full_name %></p>
-    <p>Date and time: <%= booking.date_time.strftime('%F at: %H:%M sharp!') %></p>
-    <p>Address: <%= booking.location %></p>
-    <p>Phone: <%= booking.customer.phone_number %></p>
-    <p>Comments: <%= booking.comments %></p>
-    <p><%= booking.status ? "Accepted" : "Decline" %></p>
-
+  <% if current_user.is_musician == true %>
+    <% @bookings.each do |booking| %>
+      <p>Booking Request for: <%= booking.musician.full_name %></p>
+      <p>Repertoire: <%= booking.repertoire_name %> | <%= booking.repertoire_length %> </p>
+      <p>Requested by: <%= booking.customer.full_name %></p>
+      <p>Date and time: <%= booking.date_time.strftime('%F at: %H:%M sharp!') %></p>
+      <p>Address: <%= booking.location %></p>
+      <p>Phone: <%= booking.customer.phone_number %></p>
+      <p>Comments: <%= booking.comments %></p>
+      <p><%= booking.status ? "Accepted" : "Decline" %></p>
+    <% end %>
+  <% else %>
+    <% @bookings.each do |booking| %>
+      <p>Booking Request for: <%= booking.musician.full_name %></p>
+      <p>Repertoire: <%= booking.repertoire_name %> | <%= booking.repertoire_length %> </p>
+      <p>Date and time: <%= booking.date_time.strftime('%F at: %H:%M sharp!') %></p>
+      <p>Address: <%= booking.location %></p>
+      <p>Comments: <%= booking.comments %></p>
+      <p>Booking status: <%= booking.status %></p>
+      <p>Price: <%= musician.price %></p>
+      <p>CANCEL BOOKING</p>  <!-- add here the destroy method -->
+    <% end %>
   <% end %>
 </div>
 <br>
 <%= link_to "Back to Homepage", root_path %>
+
+
+
+
+
