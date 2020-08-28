@@ -8,5 +8,6 @@
     <h4>Instruments: <%= musician.instruments %></h4>
     <h3>$<%= musician.price %></h3><p> per concert</p>
     <%= link_to "learn more",  musician_path(musician) %>
+    <%= link_to "Leave a review", new_user_review_path(musician) %>
   </div>
 </div>

@@ -19,13 +19,14 @@ class User < ApplicationRecord
   # validates :youtube, format: { with: URI.regexp }, if: 'youtube.present?'
   # validates :website, format: { with: URI.regexp }, if: 'website.present?'
   # validates :instagram, format: { with: URI.regexp }, if: 'instagram.present?'
+
   def full_name
     "#{self.first_name} #{self.last_name}"
   end
 
   def average_rating
     reviews = Review.where(musician_id: self.id)
-    reviews.sum / reviews.size
+    ratings = reviews.map { |review| review[:rating].to_f }
+    ratings.sum / ratings.size
   end
-
 end

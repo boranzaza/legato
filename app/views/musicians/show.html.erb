@@ -39,6 +39,17 @@
 <br>
 <%= link_to "Browse Musicians", musicians_path %>
 <%= link_to "Book this Artist", new_user_booking_path(@musician) %>
+<%= link_to "Leave a review", new_user_review_path(@musician) %>
+
+<h2>Average rating: <%= @musician.average_rating %></h2>
+<h3>Reviews</h3>
+<div class="all-reviews">
+  <% reviews = Review.where(musician_id: @musician.id) %>
+  <% reviews.each do |review| %>
+    <%= render 'review_card', { review: review } %>
+  <% end %>
+</div>
+
 <!-- add a new link to go to Bookings.New Page; creates a link to go to specific musician page, should call the variable id -->
 <!-- to find url, run rails routes -->
 <!-- /users/users_id/bookings/new -->

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'reviews/new'
+  get 'reviews/create'
+  get 'reviews/destroy'
   resources :musicians, only: [:index, :show, :edit, :update]
 
   devise_for :users
