@@ -15,7 +15,9 @@
       <%= f.input :date_time, as: :time %>
       <%= f.input :location, as: :string, input_html: { value: current_user.address } %>
       <%= f.input :comments, as: :text %>
-      <%= f.submit "Book" %>
+      <%= f.submit "Confirm Booking Request", class: "btn btn-primary" %>
+      <%= link_to "Cancel",musicians_path, class: "btn btn-danger"%>
+
     <%end%>
   </div>
 </div>
@@ -23,8 +25,3 @@
 <br>
 <br>
 
-<div>
-  <%= link_to "Confirm Booking Request", user_bookings_path %>
-  <!-- Added this to allow user to go back to musicians#index if he wants to cancel -->
-  <%= link_to "Cancel", musicians_path %>
-</div>
