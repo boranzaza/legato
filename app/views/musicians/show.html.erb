@@ -1,11 +1,14 @@
-<%= link_to "< Home", root_path %>
+<div class="container">
+<%= link_to "< Back to musicians", musicians_path %>
 <h1>Musicians#show</h1>
 <!-- paragraph below is super helpful -->
 <p>Find me in app/views/musicians/show.html.erb</p>
 
 <%= image_tag(@musician.photo, height: '200') %>
 <h2><%= @musician.first_name %> <%= @musician.last_name %></h2>
-
+<%= link_to "Book this Artist", new_user_booking_path(@musician), class: "btn btn-primary" %>
+<br>
+<br>
 <h3>About</h3>
 <p><%= @musician.bio %></p>
 <h4>Instruments</h4>
@@ -39,7 +42,7 @@
 </div>
 <br>
 <%= link_to "Browse Musicians", musicians_path %>
-<%= link_to "Book this Artist", new_user_booking_path(@musician) %>
+</div>
 <!-- add a new link to go to Bookings.New Page; creates a link to go to specific musician page, should call the variable id -->
 <!-- to find url, run rails routes -->
 <!-- /users/users_id/bookings/new -->
