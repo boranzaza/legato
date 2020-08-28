@@ -48,7 +48,6 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path(@booking)
     else
-      raise
       redirect_to new_user_booking_path(params[:booking][:musician_id])
     end
   end
