@@ -1,0 +1,13 @@
+<h1>Reviews#new</h1>
+<p>Find me in app/views/reviews/new.html.erb</p>
+
+<div class="container">
+  <div class="review-form">
+    <%= simple_form_for @review, url: user_reviews_path(current_user) do |t|%>
+      <%= t.input :musician_id, as: :string, input_html: { value: @musician.id, class: "d-none" }, label: false %>
+      <%= t.input :rating, as: :integer %>
+      <%= t.input :content, as: :text %>
+      <%= t.submit "Submit review" %>
+    <%end%>
+  </div>
+</div>

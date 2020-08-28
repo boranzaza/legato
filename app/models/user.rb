@@ -5,6 +5,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   # has_one_attached :photo
   has_many :bookings
+  has_many :reviews
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
@@ -18,9 +19,14 @@ class User < ApplicationRecord
   # validates :youtube, format: { with: URI.regexp }, if: 'youtube.present?'
   # validates :website, format: { with: URI.regexp }, if: 'website.present?'
   # validates :instagram, format: { with: URI.regexp }, if: 'instagram.present?'
+
   def full_name
     "#{self.first_name} #{self.last_name}"
-
   end
 
+  def average_rating
+    reviews = Review.where(musician_id: self.id)
+    ratings = reviews.map { |review| review[:rating].to_f }
+    ratings.sum / ratings.size
+  end
 end
