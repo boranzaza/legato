@@ -41,6 +41,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new({
       date_time: @date_time,
       status: nil,
+      repertoire_number: params[:booking][:repertoire_number],
       location: params[:booking][:location],
       comments: params[:booking][:comments],
       customer_id: current_user.id,
@@ -81,7 +82,7 @@ end
   private
 
   def booking_params
-    params.require(:booking).permit(:date_time, :status, :location, :comments, :customer_id, :musician_id)
+    params.require(:booking).permit(:date_time, :status, :location, :comments, :customer_id, :musician_id, :repertoire_number)
   end
 
   def set_booking
