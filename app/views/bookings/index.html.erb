@@ -24,9 +24,13 @@
       <p>Date and time: <%= booking.date_time.strftime('%F at: %H:%M sharp!') %></p>
       <p>Address: <%= booking.location %></p>
       <p>Comments: <%= booking.comments %></p>
-      <p>Booking status: <%= booking.status %></p>
+      <p>Booking status: </p>
+       <% if booking.status == true %><p>Accepted</p>
+        <% elsif booking.status == false %><p>Rejected</p>
+        <% else %><p>Pending</p>
+        <% end %>
       <p>Price: <%= User.find(booking.musician_id).price %></p>
-      <p> <%= link_to "CANCEL BOOKING", booking_path(booking), method: :delete %> </p>  <!-- add here the destroy method -->
+      <p> <%= link_to "CANCEL BOOKING", booking_path(booking), method: :delete %> </p>
       <% end %>
   <% end  %>
 </div>
