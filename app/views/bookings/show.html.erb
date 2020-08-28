@@ -1,49 +1,53 @@
 
 
 
-<%= link_to("cancel", "/bookings/#{@booking.id}", {method: :delete} ) %>
+<%#= link_to("cancel", "/bookings/#{@booking.id}", {method: :delete} ) %>
+<%= link_to "< Home", root_path %>
 
 <h1>Confirmation</h1>
 
 <div>
   <br>
-    <p>Thank you for requesting a booking with <%= "#{Musician.find(@booking.customer_id).full_name}"%>!</p>
+  <!-- "#{@musician.find(@booking.customer_id).full_name}" -->
+
+    <p>Thank you for requesting a booking with <%= @booking.musician.full_name %>!</p>
       <br>
     <p>Below are your booking details:</p>
       <br>
       <br>
-    <p>Booking Request for: <%= booking.musician.full_name %></p>
-    <p>Ensemble type: </p>
-    <p>Instruments: </p>
-    <p>Repertoire: <%= booking.repertoire_name %> | <%= booking.repertoire_length %> minutes </p>
+    <p>Booking Request for: <%= @booking.musician.full_name %></p>
+    <p>Ensemble type: <%= @booking.musician.ensemble_type %> </p>
+    <p>Instruments: <%= @booking.musician.instruments %></p>
+    <p>Repertoire: <%= @booking.repertoire_name %> | <%= @booking.repertoire_length %> minutes </p>
       <br>
       <br>
-    <p>Date and time: <%= booking.date_time.strftime('%F at: %H:%M sharp!') %></p>
-    <p>Address: <%= booking.location %></p>
-    <p>Comments: <%= booking.comments %></p>
-    <p>Price: $<%=Musician.find(@booking.customer_id).price </p>
-  <% if @booking.status == true %>
-        <p>Booking status: Accepted! </p>
-      <% elsif @booking.status == false %>
-        <p>Booking status: Declined. </p>
-      <% else %>
-        <p>Booking status: <em> Pending... </em></p>
-      <% end %>
+    <p>Date and time: <%= @booking.date_time.strftime('%F at: %H:%M sharp!') %></p>
+    <p>Address: <%= @booking.location %></p>
+    <p>Comments: <%= @booking.comments %></p>
+    <p>Price: $<%= User.find(@booking.musician_id).price %></p>
+    <p>Booking status: Pending...</p>
+
 </div>
 
 <div>
-  Once DUO CAVATINE accept/s your booking,
-  you will be notified by email on boran.m.zaza@gmail.com.
-  In the meantime, you can reach DUO CAVATINE by phone on (438) 929-9911
-  if you have additional questions or comments.
+  <p>Once <%= @booking.musician.full_name %> accept/s your booking,
+  you will be notified by email on <%= current_user.email %>.
+  In the meantime, you can reach <%= @booking.musician.full_name %> by phone on <%= @booking.musician.phone_number %>
+  if you have additional questions or comments.</p>
 </div>
 
 
 <div>
-  <%= link_to "Back to Booking Details", new_user_booking_path(@musician) %>
+  <p><%= link_to "OK", bookings_path %></p>
 </div>
 
 <div>
+  <%#= link_to "Browse Musicians", musicians_path %>
+  <p> <%= link_to "CANCEL BOOKING", booking_path(@booking), method: :delete %> </p>
+  <%#= link_to "Back to Booking Details", new_user_booking_path(@musician) %>
+</div>
+
+
 
 
 <%#= link_to "Go back to my bookings", bookings_path, class: "btn-purple" %>
