@@ -14,7 +14,6 @@
       <p>Phone: <%= booking.customer.phone_number %></p>
       <p>Comments: <%= booking.comments %></p>
       <p><%= link_to 'Accept', approve_path(id: booking.id), method: :patch %></p>
-          <!-- reject -->
       <p> <%= link_to 'Decline', reject_path(id: booking.id), method: :patch %></p>
     <% end %>
   <% else %>
