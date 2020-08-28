@@ -1,11 +1,14 @@
 <div class="container">
 <%= link_to "< Home", root_path %>
-<h1>Musicians#index</h1>
-<p>Find me in app/views/musicians/index.html.erb</p>
+<h1>Musicians</h1>
+<br>
 
 <div class="all-musicians">
   <% @musicians.each do |musician| %>
     <%= render 'musician_card', { musician: musician } %>
+    <br>
+    <br>
+
   <% end %>
 </div>
 
