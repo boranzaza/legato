@@ -27,10 +27,6 @@ class User < ApplicationRecord
   def average_rating
     reviews = Review.where(musician_id: self.id)
     ratings = reviews.map { |review| review[:rating].to_f }
-    if ratings
-      "#{self.full_name} has no reviews yet!"
-    else
-      ratings.sum / ratings.size
-    end
+    ratings.size == 0 ? "#{self.full_name} has no reviews yet!" : ratings.sum / ratings.size
   end
 end
