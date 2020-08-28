@@ -14,6 +14,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @musician = User.find(@booking.musician_id)
   end
 
   def new
@@ -46,7 +47,7 @@ class BookingsController < ApplicationController
       musician_id: params[:booking][:musician_id]})
     @booking.customer_id = current_user.id
     if @booking.save
-      redirect_to bookings_path(@booking)
+      redirect_to booking_path(@booking)
     else
       redirect_to new_user_booking_path(params[:booking][:musician_id])
     end

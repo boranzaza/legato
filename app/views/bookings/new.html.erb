@@ -1,18 +1,27 @@
+
 <div class="container">
+  <h1>Booking Details</h1>
+=======
+
+<%= link_to "< Home", root_path %><div class="container">
   <div class="booking-form">
-    <%= simple_form_for @booking, url: user_bookings_path(current_user) do |t|%>
-      <%= t.input :musician_id, as: :string, input_html: { value: @musician.id, class: "d-none" }, label: false %>
-      <%= t.input :date_time, as: :date %>
-      <%= t.input :date_time, as: :time %>
-      <%= t.input :location, as: :string, input_html: { value: current_user.address } %>
-      <%= t.input :comments, as: :text %>
-      <%= t.submit "Book" %>
+    <%= simple_form_for @booking, url: user_bookings_path(current_user) do |f|%>
+      <%= f.input :musician_id, as: :string, input_html: { value: @musician.id, class: "d-none" }, label: 'Thank you for your interest in #Artist Name' %>
+      <!-- ADD which repertoire would like them to perform -->
+      <%# f.input :repertoire, as: :radio_buttons, collection: [['0', @musician.repertoire_1], ['1', @musician.repertoire_2], label_method: :second, value_method: :first]%>
+      <%= f.input :repertoire_number %>
+      <!-- I need to make line 9 & 10 inline -->
+      <%= f.input :date_time, as: :date %>
+      <%= f.input :date_time, as: :time %>
+      <%= f.input :location, as: :string, input_html: { value: current_user.address } %>
+      <%= f.input :comments, as: :text %>
+      <%= f.submit "Confirm Booking Request", class: "btn btn-primary" %>
+      <%= link_to "Cancel",musicians_path, class: "btn btn-danger"%>
+
     <%end%>
   </div>
 </div>
 
 <br>
 <br>
-<div>
-  <%= link_to "Confirm Booking Request", user_bookings_path %>
-</div>
+

@@ -1,3 +1,5 @@
+
+<%= link_to "< Home", root_path %>
 <%= simple_form_for @user, url: musician_path(current_user)  do |f| %>
   <%= f.error_notification %>
   <%= f.input :first_name %>
