@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Booking.destroy_all
 User.destroy_all
+Review.destroy_all
 
 #here is our persona, our only customer:
 nancy_shapiro = User.create!({first_name: "Nancy",
@@ -18,6 +19,48 @@ nancy_shapiro = User.create!({first_name: "Nancy",
                           is_musician: false}
 
 )
+
+aaron = Review.create!({rating: 5,
+                        content: "Fabulous musician!! My guest were very impressed!"
+                        customer_id: 1,
+                        musician_id: 3,
+            })
+
+bob = Review.create!({rating: 5,
+                      content: "This moment of music changed my life! What an amazing musician!"
+                      customer_id: 1,
+                      musician_id: 3,
+            })
+
+charles = Review.create!({rating: 5,
+                          content: "I appreciated very much this pianist; we all had a wonderful moment. I strongly recommend him!"
+                          customer_id: 1,
+                          musician_id: 3,
+                        })
+
+david = Review.create!({rating: 5,
+                        content: "Wow wow wow!! I hired this pianist as a surprise for my wife's birthday! Now I'm husband of the year!! What an extraordinary musician!!!!"
+                        customer_id: 1,
+                        musician_id: 3,
+                        })
+
+edward = Review.create!({rating: 3,
+                        content: "It was good, but I've seen better..."
+                        customer_id: 1,
+                        musician_id: 4,
+                        })
+edwidge = Review.create!({rating: 2,
+                          content: "Arrived late. I was not impressed.."
+                          customer_id: 1,
+                          musician_id: 4,
+                        })
+
+fanny = Review.create!({rating: 4,
+                        content: "Good performance, I guess.."
+                        customer_id: 1,
+                        musician_id: 4,
+                        })
+
 
 #and here are our 6 musicians/groups
 boran_zaza = User.create!({first_name: "Boran",
@@ -136,7 +179,7 @@ carlos_avila = User.create!(first_name: "Carlos",
                             password:  "password",
                             phone_number: "437-397-1599",
                             address: "56-7899 rue Elgar, Montreal, Canada, E5F6G7",
-                            photo: "https://lh3.googleusercontent.com/proxy/ij6cO-N0bMCgo_kTDd4ryDL0QDqY2QQCWW9cZ89bJTLM-T3xz_9t8IwQmH_JLVeIdZVs-CSsjJyfB_EKeFVDkgn9u43ON_nhp_4PiFdpuEJfRSkY_y0LZGTXMlNiZvOBpfL4OHBU04QgpEa46DEaL_vciJyIVz_X6EQmPXGbnEe-lwT8",
+                            photo: "http://www.artsglobal.org/images/galleries/588/carlos%20publicity%201.jpg",
                             video: "https://www.youtube.com/watch?v=la6fKbTrtLU",
                             bio: "Hailed for his “beautiful command of tone and mood…and unruffleable savoir-faire” (San Francisco Chronicle), his “layers of emotional expression” (The Examiner) and his “level of artistry that seem far beyond his years” (Contra Costa Times), Carlos Avila is one of the most in-demand pianists on the classical music scene. His concerts have taken him across North and South America, Europe, and Asia.  Carlos began his professional career in 2001 when he stepped in for an ailing Stewart Goodyear at 24-hours-notice to play the Rachmaninoff First Piano Concerto with the California Symphony – a “pinch-hit homerun” (San Francisco Chronicle).  Since then, Carlos has been a guest at festivals such as Schleswig-Holstein, Tanglewood, Sarasota, Aspen, Banff, Music Academy of the West, Pianofest, Holland, ChamberFest Dubuque, Atlantic Music Festival, Lake George, and the Carnegie Hall Workshops where he had the opportunity to work and study with the late Isaac Stern, Daniel Barenboim, Michael Tilson Thomas, Emanuel Ax, Richard Goode and members of the St. Lawrence, Tokyo, Guarneri, Juilliard, Ying, and Borodin String Quartets.  Carlos is also an avid collaborator – he shares a 20-year partnership with acclaimed violinist Jay Oh, with whom he has given over 80 recitals across Asia and the United States. These past seasons, he performed in the Chicago Symphony Orchestra’s All-Access Chamber series and the New York Philharmonic’s Leonard Bernstein salon series. Prior to that, he embarked on a country-wide 29-city tour with award-winning Baritone Leon Williams. Carlos was also recently showcased on New York’s WQXR, where he gave an all-transcription recital broadcast as one of the winners of Juilliard’s prestigious Gina Bachauer Piano Competition.  A dedicated member of community outreach, he also collaborates frequently with the New York Philharmonic’s Assistant Concertmaster Michelle Kim and participates in the promotion of her Doublestop Foundation, a non-profit organization dedicated to providing young musicians with no-cost loans of high-quality instruments. He has also made a large part of his musical home in South Korea where he was recently awarded Honorary Ambassadorship of the city of Chuncheon for his work in the chamber music initiative “New York in Chuncheon” and promoting and supporting national and international activities in the fields of policy, tourism resources, culture and art.  Carlos is on Collaborative Piano Faculty at the Heifetz Institute, where he makes his summer home and for which he works year-round on American tours to promote the innovation of cross-disciplinary learning and communication in student training. Since the spring of 2018, he is also the new pianist of the Boreal Trio, represented exclusively by Sciolino Artist Management. In addition, he is also the studio pianist for Joel Krosnick at the Juilliard School.  A proud Filipino-American, Carlos is a graduate of the Juilliard School where he studied with Jerome Lowenthal and did prior studies at Yale with Peter Frankl and Claude Frank. He currently resides in New York City.",
                             price: "800",
