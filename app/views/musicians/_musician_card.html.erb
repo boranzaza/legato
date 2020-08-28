@@ -7,6 +7,8 @@
     <h4>Ensemble type: <%= musician.ensemble_type %></h4>
     <h4>Instruments: <%= musician.instruments %></h4>
     <h3>$<%= musician.price %></h3><p> per concert</p>
-    <%= link_to "learn more",  musician_path(musician) %>
+    <%= link_to "learn more",  musician_path(musician), class: "btn btn-primary" %>
+    <br>
+    <br>
   </div>
 </div>

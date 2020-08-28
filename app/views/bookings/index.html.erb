@@ -1,4 +1,4 @@
-
+<div class="container">
 <%= link_to "< Home", root_path %><h1>My Booking Bookings#index</h1>
 <p>(Find me in app/views/bookings/index.html.erb)</p>
 
@@ -26,10 +26,12 @@
       <p>Comments: <%= booking.comments %></p>
       <p>Booking status: <%= booking.status %></p>
       <p>Price: <%= User.find(booking.musician_id).price %></p>
-      <p> <%= link_to "CANCEL BOOKING", booking_path(booking), method: :delete %> </p>  <!-- add here the destroy method -->
+      <p> <%= link_to "CANCEL BOOKING", booking_path(booking), method: :delete, class: "btn btn-danger" %> </p>  <!-- add here the destroy method -->
       <% end %>
   <% end  %>
 </div>
 <br>
 <%= link_to "Back to Homepage", root_path %>
+</div>
+
 
