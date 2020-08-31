@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_28_152231) do
+ActiveRecord::Schema.define(version: 2020_08_31_202313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,27 @@ ActiveRecord::Schema.define(version: 2020_08_28_152231) do
     t.integer "repertoire_number"
     t.index ["customer_id"], name: "index_bookings_on_customer_id"
     t.index ["musician_id"], name: "index_bookings_on_musician_id"
+  end
+
+  create_table "chatrooms", force: :cascade do |t|
+    t.bigint "customer_id", null: false
+    t.bigint "musician_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_chatrooms_on_customer_id"
+    t.index ["musician_id"], name: "index_chatrooms_on_musician_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "customer_id", null: false
+    t.bigint "musician_id", null: false
+    t.bigint "chatroom_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["customer_id"], name: "index_messages_on_customer_id"
+    t.index ["musician_id"], name: "index_messages_on_musician_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -95,6 +116,11 @@ ActiveRecord::Schema.define(version: 2020_08_28_152231) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "users", column: "customer_id"
   add_foreign_key "bookings", "users", column: "musician_id"
+  add_foreign_key "chatrooms", "users", column: "customer_id"
+  add_foreign_key "chatrooms", "users", column: "musician_id"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users", column: "customer_id"
+  add_foreign_key "messages", "users", column: "musician_id"
   add_foreign_key "reviews", "users", column: "customer_id"
   add_foreign_key "reviews", "users", column: "musician_id"
 end
