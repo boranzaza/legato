@@ -3,9 +3,12 @@
 
 <div class="container">
   <div class="review-form">
+    <% star_empty = '<i class="far fa-star"></i>' %>
+    <% star_half = '<i class="fas fa-star-half-alt"></i>' %>
+    <% star_full = '<i class="fas fa-star"></i>' %>
     <%= simple_form_for @review, url: user_reviews_path(current_user) do |t|%>
       <%= t.input :musician_id, as: :string, input_html: { value: @musician.id, class: "d-none" }, label: false %>
-      <%= t.input :rating, as: :integer %>
+      <%= t.input :rating, as: :radio_buttons, collection: [['Absolute disaster - 1', 1], ['Seen worse - 2', 2], ['Meh - 3', 3], ['Good - 4', 4], ['Fabulous - 5', 5]] %>
       <%= t.input :content, as: :text %>
       <%= t.submit "Submit review" %>
     <%end%>

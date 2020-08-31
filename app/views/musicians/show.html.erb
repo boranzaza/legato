@@ -45,7 +45,13 @@
 <%= link_to "Book this Artist", new_user_booking_path(@musician) %>
 <%= link_to "Leave a review", new_user_review_path(@musician) %>
 
-<h2>Average rating: <%= @musician.average_rating %></h2>
+<h3>Average rating</h3>
+<% if @musician.average_rating.class == String %>
+  <p>No reviews yet</p>
+<% else %>
+  <%= render 'review_stars', { musician: @musician } %>
+<% end %>
+
 <h3>Reviews</h3>
 <div class="all-reviews">
   <% reviews = Review.where(musician_id: @musician.id) %>

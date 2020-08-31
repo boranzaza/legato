@@ -3,7 +3,15 @@
     <%= image_tag musician.photo, height: "150"%>
   </div>
   <div class="musician-info">
+
     <h2><%= musician.first_name %> <%= musician.last_name %></h2>
+
+    <% if musician.average_rating.class == String %>
+      <p>No reviews yet</p>
+    <% else %>
+      <%= render 'review_stars', { musician: musician } %>
+    <% end %>
+
     <h4>Ensemble type: <%= musician.ensemble_type %></h4>
     <h4>Instruments: <%= musician.instruments %></h4>
     <h3>$<%= musician.price %></h3><p> per concert</p>
