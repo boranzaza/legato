@@ -29,4 +29,12 @@ class User < ApplicationRecord
     ratings = reviews.map { |review| review[:rating].to_f }
     ratings.size == 0 ? "#{self.full_name} has no reviews yet!" : ratings.sum / ratings.size
   end
+
+  include PgSearch::Model
+  pg_search_scope :search_musician,
+    against: [ :first_name, :last_name, :instruments, :ensemble_type ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
 end
