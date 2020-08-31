@@ -2,7 +2,11 @@ class MusiciansController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @musicians = User.where(is_musician: true)
+    if params[:query].present?
+      @musicians = User.search_musician(params[:query]).where(is_musician: true)
+    else
+      @musicians = User.where(is_musician: true)
+    end
   end
 
   def show
@@ -43,7 +47,8 @@ class MusiciansController < ApplicationController
       :repertoire_1_length,
       :repertoire_2,
       :repertoire_2_length,
-      :is_musician
+      :is_musician,
+      :query
       )
   end
 

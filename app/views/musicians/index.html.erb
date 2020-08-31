@@ -3,6 +3,17 @@
 <h1>Musicians</h1>
 <br>
 
+<%= form_tag musicians_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find musicians by their names, instruments or ensemble type"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+<br>
+
 <div class="all-musicians">
   <% @musicians.each do |musician| %>
     <%= render 'musician_card', { musician: musician } %>

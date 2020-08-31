@@ -20,46 +20,6 @@ nancy_shapiro = User.create!({first_name: "Nancy",
 
 )
 
-aaron = Review.create!({rating: 5,
-                        content: "Fabulous musician!! My guest were very impressed!"
-                        customer_id: 1,
-                        musician_id: 3,
-            })
-
-bob = Review.create!({rating: 5,
-                      content: "This moment of music changed my life! What an amazing musician!"
-                      customer_id: 1,
-                      musician_id: 3,
-            })
-
-charles = Review.create!({rating: 5,
-                          content: "I appreciated very much this pianist; we all had a wonderful moment. I strongly recommend him!"
-                          customer_id: 1,
-                          musician_id: 3,
-                        })
-
-david = Review.create!({rating: 5,
-                        content: "Wow wow wow!! I hired this pianist as a surprise for my wife's birthday! Now I'm husband of the year!! What an extraordinary musician!!!!"
-                        customer_id: 1,
-                        musician_id: 3,
-                        })
-
-edward = Review.create!({rating: 3,
-                        content: "It was good, but I've seen better..."
-                        customer_id: 1,
-                        musician_id: 4,
-                        })
-edwidge = Review.create!({rating: 2,
-                          content: "Arrived late. I was not impressed.."
-                          customer_id: 1,
-                          musician_id: 4,
-                        })
-
-fanny = Review.create!({rating: 4,
-                        content: "Good performance, I guess.."
-                        customer_id: 1,
-                        musician_id: 4,
-                        })
 
 
 #and here are our 6 musicians/groups
@@ -230,7 +190,7 @@ Booking.create!(customer: nancy_shapiro,
                 comments:"my backyard okay?",
 )
 
-
+#
 
 
 
