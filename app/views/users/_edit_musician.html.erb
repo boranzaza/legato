@@ -1,27 +1,42 @@
+<h2 style="text-align: center">UPDATE PROFILE</h2>
+  <br>
+   <%= link_to "< Home", root_path %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-6 col-xl-6 ">
+      <div class="form-login">
 
-<%= link_to "< Home", root_path %>
-<%= simple_form_for @user, url: musician_path(current_user)  do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :email, input_html: { autocomplete: 'email' } %>
-  <%= f.input :password, input_html: { autocomplete: 'current-password' } %>
-  <%= f.input :phone_number %>
-  <%= f.input :address %>
-  <%= f.input :photo %>
-  <%= f.input :video %>
-  <%= f.input :bio %>
-  <%= f.input :price %>
-  <%= f.input :ensemble_type %>
-  <%= f.input :instruments %>
-  <%= f.input :facebook %>
-  <%= f.input :youtube %>
-  <%= f.input :website %>
-  <%= f.input :instagram %>
-  <%= f.input :repertoire_1 %>
-  <%= f.input :repertoire_1_length %>
-  <%= f.input :repertoire_2 %>
-  <%= f.input :repertoire_2_length %>
-  <%= f.input :repertoire_1 %>
-  <%= f.submit "Update my profile" %>
-<% end %>
+
+        <%= simple_form_for @user, url: musician_path(current_user)  do |f| %>
+          <%= f.error_notification %>
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%= f.input :email, input_html: { autocomplete: 'email' } %>
+          <%= f.input :password, input_html: { autocomplete: 'current-password' } %>
+          <%= f.input :phone_number %>
+          <%= f.input :address %>
+          <%= f.input :photo %>
+          <%= f.input :video %>
+          <%= f.input :bio %>
+          <%= f.input :price %>
+          <%= f.input :ensemble_type %>
+          <%= f.input :instruments %>
+          <%= f.input :facebook %>
+          <%= f.input :youtube %>
+          <%= f.input :website %>
+          <%= f.input :instagram %>
+          <%= f.input :repertoire_1 %>
+          <%= f.input :repertoire_1_length %>
+          <%= f.input :repertoire_2 %>
+          <%= f.input :repertoire_2_length %>
+          <%= f.input :repertoire_1 %>
+          <div class="row justify-content-center">
+            <%= f.submit "Update my profile", class: "btn" %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
