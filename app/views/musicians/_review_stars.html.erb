@@ -1,0 +1,21 @@
+<div class="star-container">
+  <% rating = musician.average_rating.round(1) %>
+  <% halves = ((rating - rating.floor) / 0.5).to_i %>
+  <% empties = (5 - rating.floor - halves) %>
+
+  <% rating.floor.times do %>
+    <i class="fas fa-star"></i>
+  <% end %>
+
+  <% halves.times do %>
+    <i class="fas fa-star-half-alt"></i>
+  <% end %>
+
+  <% empties.times do %>
+    <i class="far fa-star"></i>
+  <% end %>
+
+  <span>
+    (<%= sprintf("%.2f", musician.average_rating.round(2)) %>)
+  </span>
+</div>
