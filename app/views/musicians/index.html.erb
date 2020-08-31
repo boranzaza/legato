@@ -1,27 +1,36 @@
 <div class="container">
-<%= link_to "< Home", root_path %>
-<h1>Musicians</h1>
-<br>
+  <!-- need container for grid -->
+  <%= link_to "< Home", root_path %>
+  <h1>Musicians</h1>
+  <br>
 
-<%= form_tag musicians_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find musicians by their names, instruments or ensemble type"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
-<br>
-
-<div class="all-musicians">
-  <% @musicians.each do |musician| %>
-    <%= render 'musician_card', { musician: musician } %>
-    <br>
-    <br>
-
+  <%= form_tag musicians_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find musicians by their names, instruments or ensemble type"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
-</div>
 
-<%= link_to "Back to Homepage", root_path %>
+  <br>
+
+  <div class="row">
+    <!-- check notes from TA call w Stephane for responsiveness -->
+    <!-- <div class="all-musicians"> -->
+      <!-- specify columns on line below as per responsiveness, check bootstrap documentation for grid -->
+      <!-- might need to move row/div -->
+
+      <% @musicians.each do |musician| %>
+        <div class="col col-sm-6 col-md-4">
+          <%= render 'musician_card', { musician: musician } %>
+          <br>
+          <br>
+        </div>
+      <% end %>
+
+    <!-- </div> -->
+  </div>
+
+  <%= link_to "Back to Homepage", root_path %>
 </div>

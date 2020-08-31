@@ -1,18 +1,19 @@
-<div class="musician-card">
-  <div class="musician-picture">
-    <%= image_tag musician.photo, height: "150"%>
+<div class="musician-card card" >
+  <div class="card-img-top">
+    <%= image_tag musician.photo, class: "musician-picture" %>
   </div>
-  <div class="musician-info">
-
-    <h2><%= musician.first_name %> <%= musician.last_name %></h2>
-
+  
+  <div class="musician-info card-body">
+    <div class="card-title">
+      <h2><%= musician.first_name %> <%= musician.last_name %></h2>
+    </div>
+    <h4 class="card-text">Ensemble type: <%= musician.ensemble_type %></h4>
     <% if musician.average_rating.class == String %>
       <p>No reviews yet</p>
     <% else %>
       <%= render 'review_stars', { musician: musician } %>
     <% end %>
-
-    <h4>Ensemble type: <%= musician.ensemble_type %></h4>
+  
     <h4>Instruments: <%= musician.instruments %></h4>
     <h3>$<%= musician.price %></h3><p> per concert</p>
     <%= link_to "Leave a review", new_user_review_path(musician) %>
@@ -23,3 +24,5 @@
 
   </div>
 </div>
+
+          <!-- add padding and margins on cards -->
