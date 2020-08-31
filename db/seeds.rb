@@ -133,7 +133,7 @@ quatuor_despax = User.create!({first_name: "Quatuor",
 
 )
 
-carlos_avila = User.create!(firs t_name: "Carlos",
+carlos_avila = User.create!(first_name: "Carlos",
                             last_name: "Avila",
                             email: "contact@avila.com",
                             password:  "password",
