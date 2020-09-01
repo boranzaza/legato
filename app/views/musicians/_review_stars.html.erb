@@ -1,4 +1,4 @@
-<div class="star-container">
+<div class="star-container" style="color: #846000; margin-left: 10px">
   <% rating = musician.average_rating.round(1) %>
   <% halves = ((rating - rating.floor) / 0.5).to_i %>
   <% empties = (5 - rating.floor - halves) %>
@@ -15,7 +15,7 @@
     <i class="far fa-star"></i>
   <% end %>
 
-  <span>
+ <!--  <span>
     (<%= sprintf("%.2f", musician.average_rating.round(2)) %>)
-  </span>
+  </span> -->
 </div>

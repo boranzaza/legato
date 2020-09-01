@@ -12,3 +12,9 @@
 @import "components/index";
 @import "pages/index";
 @import "components/buttons";
+
+// General Style
+.legato-container {
+  max-width: 800px;
+  margin: 0 auto;
+}

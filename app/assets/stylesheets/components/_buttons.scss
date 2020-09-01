@@ -21,6 +21,13 @@
   // margin-right: 336px;
   // margin-top: 22px;
   // text-capitalize:"true";
+   a:hover {
+    color: #0D253D;
+    text-decoration: none;
+  }
+  a {
+    color: #fff;
+  }
 }
 
 .btn-primary:hover{
@@ -51,6 +58,13 @@
   // margin-right: 336px;
   // margin-top: 22px;
   // text-capitalize:"true";
+   a:hover {
+    color: #0D253D;
+    text-decoration: none;
+  }
+  a {
+    color: #fff;
+  }
 }
 
 .btn-primary-ok:hover{
@@ -61,22 +75,22 @@
 
 .btn-danger {
   background-color: #84161E;
-  // color: white;
+  color: white;
   border: none;
-  // padding: 16px 26px 40px;
-  // border-radius: 8px;
-  // font-weight: bold;
-  // opacity: 1;
-  // width: auto;
-  // height: 40px;
-  // text-decoration: none;
-  // text-align: center;
-  // vertical-align: middle;
-  // cursor: pointer;
+  padding: 16px 26px 40px;
+  border-radius: 8px;
+  font-weight: bold;
+  opacity: 1;
+  width: auto;
+  height: 40px;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
   transition: background-color 0.5s;
-  // overflow: hidden;
-  // margin-top: 20px;
-  // text-transform: uppercase;
+  overflow: hidden;
+  margin-top: 20px;
+  text-transform: uppercase;
 }
 
 .btn-danger:hover{
@@ -84,6 +98,79 @@
    box-shadow:0px 1px 1px 1px rgba(132, 96, 0, 0.2);
    color: #84161E;
 }
+
+.btn_home{
+  background-color: white;
+  color: #846000;
+  border: none;
+  font-weight: 400;
+  opacity: 1;
+  text-decoration: none;
+  width: auto;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  overflow: hidden;
+  margin-top: 20px;
+  text-transform: uppercase;
+
+  a:hover {
+    color: #846000;
+  }
+  a {
+    color: #846000;
+  }
+}
+
+.btn-cancel {
+  background-color: white;
+  color: #84161E;
+  border: none;
+  padding: 16px 26px 40px;
+  border-radius: 8px;
+  font-weight: 400;
+  opacity: 1;
+  width: auto;
+  height: 40px;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  overflow: hidden;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.btn-cancel:hover{
+   text-decoration: underline;
+}
+
+.btn-cancel-booking {
+  background-color: #84161E;
+  color: white;
+  border: none;
+  padding: 5px 40px;
+  border-radius: 8px;
+  font-weight: bold;
+  opacity: 1;
+  width: auto;
+  height: auto;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: background-color 0.5s;
+  overflow: hidden;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.btn-cancel-booking:hover{
+   background:#fff;
+   box-shadow:0px 1px 1px 1px rgba(132, 96, 0, 0.2);
+   color: #84161E;
+}
+
 
 // .btn-navy-blue:after {
 //     content: "";

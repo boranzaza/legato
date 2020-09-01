@@ -1,12 +1,13 @@
-
+<button type="button" class="btn_home" style="padding-left: 30px; "> <%= link_to "< Home", root_path %>
+    </button>
 <div class="container">
-  <h1>Booking Details</h1>
-
-
-<%= link_to "< Home", root_path %> <!--<div class="container">-->
+  <div class="row justify-content-center">
+    <h1>BOOKING DETAILS</h1>
+  </div>
+<br>
   <div class="booking-form">
 
-    <p>Thank you for your interest in booking <%= @musician.full_name %> </p>
+    <p><strong> Thank you for your interest in booking <%= @musician.full_name %> </strong></p>
 
     <%= simple_form_for @booking, url: user_bookings_path(current_user) do |f|%>
        <%= f.input :musician_id, as: :string, input_html: { value: @musician.id, class: "d-none" }, label: false %>
