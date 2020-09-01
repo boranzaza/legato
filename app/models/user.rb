@@ -6,6 +6,9 @@ class User < ApplicationRecord
   # has_one_attached :photo
   has_many :bookings
   has_many :reviews
+  has_many :messages
+  has_many :chatrooms
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }

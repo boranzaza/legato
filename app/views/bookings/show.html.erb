@@ -40,6 +40,13 @@
     if you have additional questions or comments.</a></strong>
   </div>
 
+<div>
+  <% if current_user.is_musician %>
+    <%= link_to "Send a message to #{@booking.customer.full_name}", chatrooms_path %></p>
+  <% else %>
+    <%= link_to "Send a message to #{@booking.musician.full_name}", chatrooms_path %></p>
+  <% end %>
+</div>
 
   <div class="row justify-content-center">
     <button type="button" class="btn-navy-blue" style="width: 50%"> <%= link_to "OK", bookings_path %>

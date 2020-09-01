@@ -1,0 +1,25 @@
+<h1>Chatrooms#show</h1>
+<p>Find me in app/views/chatrooms/show.html.erb</p>
+
+
+<div class="container">
+  <h1>Conversation between musician <%= @chatroom.musician.full_name %> and customer <%= @chatroom.customer.full_name %> </h1>
+  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+    <% @chatroom.messages.each do |message| %>
+      <div class="message-container" id="message-<%= message.id %>">
+        <i class="author">
+          <span><%= message.user.full_name %></span>
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        </i>
+        <p><%= message.content %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div id="create-message">
+    <%= simple_form_for [ @chatroom, Message.new ], remote: true, html: {autocomplete: "off" } do |f| %>
+      <%= f.input :content, label: false, placeholder: "Type your message" %>
+    <% end %>
+  </div>
+</div>
+
