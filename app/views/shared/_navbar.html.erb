@@ -3,7 +3,6 @@
       <%= cl_image_tag "https://res.cloudinary.com/boranzaza/image/upload/v1598641795/Legato_-_logo_bvyl9o.png" %>
     <% end %>
     <div class="legato-navbar-items">
-      <div>
       <% if user_signed_in? %>
         <div class="nav-item-active">
           <%= link_to "My Bookings", bookings_path, class: "btn-primary small-btn" %>
@@ -35,6 +34,5 @@
         <%= link_to "Sign up", new_user_registration_path, class: "small-btn" %>
         <%= link_to "Log in", new_user_session_path, class: "small-btn" %>
       <% end %>
-    </div>
   </div>
 </div>
