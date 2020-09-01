@@ -85,6 +85,27 @@
    color: #84161E;
 }
 
+.btn_home{
+  background-color: white;
+  color: #846000;
+  border: none;
+  font-weight: 400;
+  opacity: 1;
+  text-decoration: none;
+  width: auto;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  overflow: hidden;
+  margin-top: 20px;
+  text-transform: uppercase;
+
+  a:hover {
+    color: #846000;
+  }
+  a {
+    color: #846000;
+  }
+}
 // .btn-navy-blue:after {
 //     content: "";
 //     background: #;

@@ -1,8 +1,9 @@
 .musician-website {
   color: #846000;
-  &:hover {
-    text-decoration: none;
-  }
+  text-decoration: underline;
+  // &:hover {
+  //   text-decoration: none;
+  // }
 }
 
 .musician-video {
@@ -14,4 +15,13 @@
   .musician-video {
     height: 300px;
   }
+}
+
+
+.social-media-icons {
+  color: #846000;
+  &:hover {
+    text-decoration: none;
+  }
+  font-size: 50px;
 }

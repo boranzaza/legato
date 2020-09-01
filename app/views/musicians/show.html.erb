@@ -1,5 +1,7 @@
+<button type="button" class="btn_home" style="padding-left: 30px; "> <%= link_to "< Home", root_path %>
+    </button>
 <div class="container">
-  <%= link_to "< Back to musicians", musicians_path %>
+
   <br>
   <br>
   <br>
@@ -13,12 +15,12 @@
         <%= link_to "Website", @musician.website, class: "musician-website" %>
         <br>
         <br>
-        <p style="margin-bottom: 4px"><strong>Ensemble type: </strong><%= @musician.ensemble_type %></p>
-        <p style="margin-bottom: 4px"><strong>Instruments: </strong><%= @musician.instruments %></p>
-        <p style="margin-bottom: 4px"><strong>Repertoire 1: </strong><%= @musician.repertoire_1 %> | <%= @musician.repertoire_1_length %> minutes</p>
-        <p style="margin-bottom: 4px"><strong>Repertoire 2: </strong><%= @musician.repertoire_2 %> | <%= @musician.repertoire_2_length %> minutes</p>
+        <p style="margin-bottom: 4px; color: #0D253D"><strong>Ensemble type: </strong><%= @musician.ensemble_type.capitalize %></p>
+        <p style="margin-bottom: 4px; color: #0D253D"><strong>Instruments: </strong><%= @musician.instruments.capitalize %></p>
+        <p style="margin-bottom: 4px; color: #0D253D"><strong>Repertoire 1: </strong><%= @musician.repertoire_1 %> | <%= @musician.repertoire_1_length %> minutes</p>
+        <p style="margin-bottom: 4px; color: #0D253D"><strong>Repertoire 2: </strong><%= @musician.repertoire_2 %> | <%= @musician.repertoire_2_length %> minutes</p>
     </div>
-    <div style="margin-left: 30px">
+    <div style="margin-left: 30px; color: #0D253D">
       <span><h3>$<%= @musician.price %></h3><p style="margin-bottom: 4px"> per concert</p></span>
     </div>
   </div>
@@ -32,16 +34,16 @@
   <h4 style="color: #84161E">BIOGRAPHY</h4>
     <p align="justify" style="color: #0D253D"><%= @musician.bio %></p>
 
-  <div class="row justify-content-center" style="font-size: 50px; color: #84161E">
-    <div class="links-to-socials" style="display: inline; color: #69748C" >
+  <div class="row justify-content-center" style="font-size: 50px">
+    <div class="social-media-icons">
       <%= link_to @musician.facebook do %>
-        <i class="fab fa-facebook"></i>
+        <i class="fab fa-facebook" style="color: #846000"></i>
       <% end %>
       <%= link_to @musician.youtube do %>
-        <i class="fab fa-youtube"></i>
+        <i class="fab fa-youtube" style="color: #846000"></i>
       <% end %>
       <%= link_to @musician.instagram do %>
-        <i class="fab fa-instagram"></i>
+        <i class="fab fa-instagram" style="color: #846000"></i>
       <% end %>
     </div>
   </div>
@@ -57,19 +59,25 @@
 
 
   <br>
+    <div class="row justify-content-center">
+      <%= link_to "Leave a review", new_user_review_path(@musician), class: "btn btn-primary" %>
+    </div>
+    <br>
+    <br>
 
+  <div class="d-flex">
+    <p style="margin-right: 180px; font-size: 25px; font-weight: 700; color: #0D253D">REVIEWS</p>
 
-
-  <p><strong>Average rating</strong></p>
+    <p style="margin-left: 170px ; color: #0D253D"><strong>Average rating: </strong></p>
     <% if @musician.average_rating.class == String %>
-      <p>No reviews yet</p>
+      <p style="color: #0D253D; margin-left: 10px"> No reviews yet</p>
     <% else %>
       <%= render 'review_stars', { musician: @musician } %>
     <% end %>
+  </div>
+<hr style="margin-top: 5px; border-top: 2px solid  #0D253D">
 
-  <p>Reviews</p>
-  <%= link_to "Leave a review", new_user_review_path(@musician) %>
-  <div class="all-reviews">
+  <div class="all-reviews" style="color: #0D253D">
     <% reviews = Review.where(musician_id: @musician.id) %>
     <% reviews.each do |review| %>
       <%= render 'review_card', { review: review } %>
