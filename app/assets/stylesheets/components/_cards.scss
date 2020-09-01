@@ -1,9 +1,5 @@
 // fontanello & color picker : make sure you have these extensions
 
-body {
-
-}
-
 .card-title h2 {
   text-align: center;
   font-family: Roboto;
@@ -13,6 +9,9 @@ body {
   text-transform: uppercase;
 }
 
+.learn-more-btn {
+  height: 50px;
+}
 
 .musician-picture {
   max-width: 100%;

@@ -10,19 +10,21 @@
       <hr id="card-line">
     </div>
     <h4 class="card-text">Ensemble type: <%= musician.ensemble_type %></h4>
-    <% if musician.average_rating.class == String %>
+   <!--  <% if musician.average_rating.class == String %>
       <p>No reviews yet</p>
     <% else %>
       <%= render 'review_stars', { musician: musician } %>
-    <% end %>
+    <% end %> -->
 
     <h4>Instruments: <%= musician.instruments %></h4>
-    <h3>$<%= musician.price %></h3><p> per concert</p>
-    <%= link_to "Leave a review", new_user_review_path(musician) %>
 
-    <%= link_to "learn more",  musician_path(musician), class: "btn btn-primary" %>
-    <br>
-    <br>
+      <!-- this is the price/button section -->
+      <div class="d-flex justify-content-between">
+        <h3>$<%= musician.price %> <br> <small> per concert</small></h3>
+    <!--     <%= link_to "Leave a review", new_user_review_path(musician) %>
+     -->
+        <%= link_to "learn more",  musician_path(musician), class: "btn btn-primary learn-more-btn align-self-start" %>
+      </div>
 
   </div>
 </div>
