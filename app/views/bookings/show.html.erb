@@ -1,0 +1,96 @@
+<button type="button" class="btn_home" style="padding-left: 30px; "> <%= link_to "< Home", root_path %>
+    </button>
+
+<h1 style="text-align: center">CONFIRMATION</h1>
+<%#= link_to("cancel", "/bookings/#{@booking.id}", {method: :delete} ) %>
+
+<br>
+
+
+  <!-- "#{@musician.find(@booking.customer_id).full_name}" -->
+<div class="container">
+  <strong><p style="text-align: center; color: #0D253D">Thank you for requesting a booking with <%= @booking.musician.full_name.upcase %>!</p></strong>
+  <br>
+  <p style="color: #0D253D">Below are your booking details:</p>
+
+
+  <div class="booking-card">
+    <div class="d-flex">
+      <img class="avatar_booking" src="<%=@booking.musician.photo%>" alt="<%=@booking.musician.full_name%>">
+      <div>
+        <p><strong>Booking Request for:</strong> <%= @booking.musician.full_name.upcase %></p>
+        <p><strong>Ensemble type:</strong> <%= @booking.musician.ensemble_type %> </p>
+        <p><strong>Instruments:</strong> <%= @booking.musician.instruments %></p>
+        <p><strong>Repertoire:</strong> <%= @booking.repertoire_name %> | <%= @booking.repertoire_length %> minutes </p>
+      </div>
+    </div>
+    <br>
+    <p><strong>Date and time:</strong> <%= @booking.date_time.strftime('%F at: %H:%M sharp!') %></p>
+    <p><strong>Address:</strong> <%= @booking.location %></p>
+    <p><strong>Comments:</strong> <%= @booking.comments %></p>
+    <p><strong>Price:</strong> $<%= User.find(@booking.musician_id).price %></p>
+    <p><strong>Booking status:</strong> PENDING</p>
+
+  </div>
+  <br>
+  <div>
+    <strong><a style="text-align: justify; color: #84161E">*Once <%= @booking.musician.full_name.upcase %> accept/s your booking,
+    you will be notified by email on <%= current_user.email %>.
+    In the meantime, you can reach <%= @booking.musician.full_name.upcase %> by phone on <%= @booking.musician.phone_number %>
+    if you have additional questions or comments.</a></strong>
+  </div>
+
+
+  <div class="row justify-content-center">
+    <button type="button" class="btn-navy-blue" style="width: 50%"> <%= link_to "OK", bookings_path %>
+    </button>
+  </div>
+
+
+  <div class="row justify-content-center">
+    <button type="button" class="btn-cancel" data-toggle="modal" data-target="#exampleModal">
+      <div>
+        I made this booking by mistake. Cancel booking
+        <!-- Launch demo modal -->
+      </div>
+    </button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <strong>Cancellation successful</strong>
+        <br>
+        Your booking request has been
+        successfully cancelled.
+        <div>
+          <p> <%= link_to "OK", booking_path(@booking), method: :delete %> </p>
+          <!-- Launch demo modal -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button> -->
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<%#= link_to "Go back to my bookings", bookings_path, class: "btn-purple" %>
+<%#= link_to "Go back to plantsitters", users_path, class: "btn-purple" %>
+<%#= booking.status ? "Accepted" : "Decline" %>
+
+
+
+
