@@ -13,8 +13,9 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-
-    <%= yield %>
+    <div class="legato-container">
+      <%= render 'shared/flashes' %>
+      <%= yield %>
+    </div>
   </body>
 </html>

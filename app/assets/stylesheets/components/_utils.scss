@@ -1,0 +1,17 @@
+.musician-website {
+  color: #846000;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.musician-video {
+  width: 100%;
+  height: 400px;
+}
+
+@media (max-width: 700px) {
+  .musician-video {
+    height: 300px;
+  }
+}
