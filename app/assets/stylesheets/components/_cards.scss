@@ -1,12 +1,22 @@
-.musician-card {
-  margin: 10px;
+// fontanello & color picker : make sure you have these extensions
+
+.card-title {
+  text-align: center;
+  font-size: ;
+
+
 }
-
-body {
-
-}
-
 .musician-picture {
   max-width: 100%;
   height: auto;
 }
+
+.musician-card {
+  margin: 10px;
+}
+
+#card-line {
+  border: 0.5px solid black;
+
+}
+
