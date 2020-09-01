@@ -7,7 +7,7 @@
       <div class="form-login">
 
 
-        <%= simple_form_for @user, url: musician_path(current_user)  do |f| %>
+        <%= simple_form_for @musician, url: musician_path(current_user)  do |f| %>
           <%= f.error_notification %>
           <%= f.input :first_name %>
           <%= f.input :last_name %>

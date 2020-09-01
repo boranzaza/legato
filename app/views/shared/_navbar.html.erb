@@ -1,41 +1,40 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= cl_image_tag "https://res.cloudinary.com/boranzaza/image/upload/v1598641795/Legato_-_logo_bvyl9o.png" %>
+<div class="legato-navbar">
+    <%= link_to root_path, class: "legato-logo" do %>
+      <%= cl_image_tag "https://res.cloudinary.com/boranzaza/image/upload/v1598641795/Legato_-_logo_bvyl9o.png" %>
     <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <div class="legato-navbar-items">
+      <div>
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "/", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "My Bookings", bookings_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-            <% if current_user.is_musician == true %>
+        <div class="nav-item-active">
+          <%= link_to "My Bookings", bookings_path, class: "btn-primary small-btn" %>
+        </div>
+
+        <div class="nav-item-active">
+          <% if current_user.is_musician %>
+            <%= link_to "My Profile", edit_musician_path(current_user), class: "btn-primary small-btn" %>
+          <% else %>
+            <%= link_to "My Profile", edit_user_path(current_user), class: "btn-primary small-btn" %>
+          <% end %>
+        </div>
+
+        <div class="dropdown">
+          <% if current_user.is_musician == true %>
             <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% elsif current_user.is_musician == false  %>
             <%= cl_image_tag "Nancy_ikk7f1", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
             <%= image_tag "https://icon-library.com/images/anonymous-user-icon/anonymous-user-icon-16.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <% end %>          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
+          <% end %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Edit profile", edit_user_path(current_user), class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
-        </li>
+        </div>
+
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
+        <%= link_to "Sign up", new_user_registration_path, class: "small-btn" %>
+        <%= link_to "Log in", new_user_session_path, class: "small-btn" %>
       <% end %>
-    </ul>
+    </div>
   </div>
 </div>
