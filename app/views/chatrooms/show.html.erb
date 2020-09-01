@@ -6,7 +6,7 @@
   <h1>Conversation between musician <%= @chatroom.musician.full_name %> and customer <%= @chatroom.customer.full_name %> </h1>
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <% @chatroom.messages.each do |message| %>
-      <%= render './messages/message', { message: message } %>
+      <%= render 'messages/message', { message: message } %>
     <% end %>
   </div>
 
