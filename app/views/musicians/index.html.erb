@@ -4,14 +4,16 @@
   <h1>Musicians</h1>
   <br>
 
-  <%= form_tag musicians_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find musicians by their names, instruments or ensemble type"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+  <div class="card-body">
+    <%= form_tag musicians_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find musicians by their names, instruments or ensemble type"
+      %>
+      <%= submit_tag "Search", class: "btn btn-navy-blue" %>
+    <% end %>
+  </div>
 
   <br>
 
@@ -22,7 +24,7 @@
       <!-- might need to move row/div -->
 
       <% @musicians.each do |musician| %>
-        <div class="col col-sm-6 col-md-4">
+        <div class="col col-sm-12 col-md-6 col-lg-6">
           <%= render 'musician_card', { musician: musician } %>
           <br>
           <br>
