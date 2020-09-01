@@ -2,10 +2,12 @@
   <div class="card-img-top">
     <%= image_tag musician.photo, class: "musician-picture" %>
   </div>
-  
+
   <div class="musician-info card-body">
     <div class="card-title">
       <h2><%= musician.first_name %> <%= musician.last_name %></h2>
+      <!-- we can try styling the hr to change the color -->
+      <hr id="card-line">
     </div>
     <h4 class="card-text">Ensemble type: <%= musician.ensemble_type %></h4>
     <% if musician.average_rating.class == String %>
@@ -13,7 +15,7 @@
     <% else %>
       <%= render 'review_stars', { musician: musician } %>
     <% end %>
-  
+
     <h4>Instruments: <%= musician.instruments %></h4>
     <h3>$<%= musician.price %></h3><p> per concert</p>
     <%= link_to "Leave a review", new_user_review_path(musician) %>
