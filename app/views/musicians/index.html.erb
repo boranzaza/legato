@@ -4,14 +4,17 @@
   <h1>Musicians</h1>
   <br>
 
+<!-- SEARCH BAR -->
   <div class="card-body">
     <%= form_tag musicians_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find musicians by their names, instruments or ensemble type"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <div class="d-flex">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find musicians by their names, instruments or ensemble type"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary musician-search-btn" %>
+      </div>
     <% end %>
   </div>
 
