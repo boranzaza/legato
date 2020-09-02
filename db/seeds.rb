@@ -3,13 +3,13 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   movies = Movie.create([ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Booking.destroy_all
 User.destroy_all
 Review.destroy_all
 
-#here is our persona, our only customer:
+#here is our persona:
 nancy_shapiro = User.create!(first_name: "Nancy",
                           last_name: "Shapiro",
                           email: "nancy_money@gmail.com",
@@ -17,10 +17,71 @@ nancy_shapiro = User.create!(first_name: "Nancy",
                           phone_number: "819-399-1919",
                           address: "1000 The Boulevard, Westmount, Canada, B9C9D9",
                           is_musician: false,
-
 )
 
+#here are 7 more customers (their reviews starts at line 333:
+aaron_sherbatsky = User.create!(first_name: "Aaron",
+                          last_name: "Sherbatsky",
+                          email: "nancy_money@gmail.com",
+                          password: "password",
+                          phone_number: "819-399-1919",
+                          address: "1000 The Boulevard, Westmount, Canada, B9C9D9",
+                          is_musician: false,
+)
 
+bedros_babadjanian = User.create!(first_name: "Bedros",
+                          last_name: "Babadjanian",
+                          email: "nancy_money@gmail.com",
+                          password: "password",
+                          phone_number: "819-399-1919",
+                          address: "1000 The Boulevard, Westmount, Canada, B9C9D9",
+                          is_musician: false,
+)
+
+charles_péloquin = User.create!(first_name: "Charles",
+                          last_name: "Péloquin",
+                          email: "nancy_money@gmail.com",
+                          password: "password",
+                          phone_number: "819-399-1919",
+                          address: "1000 The Boulevard, Westmount, Canada, B9C9D9",
+                          is_musician: false,
+)
+
+david_bordeleau = User.create!(first_name: "David",
+                          last_name: "Bordeleau",
+                          email: "nancy_money@gmail.com",
+                          password: "password",
+                          phone_number: "819-399-1919",
+                          address: "1000 The Boulevard, Westmount, Canada, B9C9D9",
+                          is_musician: false,
+)
+
+edward_longshire = User.create!(first_name: "Edward",
+                          last_name: "Longshire",
+                          email: "nancy_money@gmail.com",
+                          password: "password",
+                          phone_number: "819-399-1919",
+                          address: "1000 The Boulevard, Westmount, Canada, B9C9D9",
+                          is_musician: false,
+)
+
+edwidge_seinfeld = User.create!(first_name: "Edwidge",
+                          last_name: "Seinfeld",
+                          email: "nancy_money@gmail.com",
+                          password: "password",
+                          phone_number: "819-399-1919",
+                          address: "1000 The Boulevard, Westmount, Canada, B9C9D9",
+                          is_musician: false,
+)
+
+fanny_beauregard = User.create!(first_name: "Fanny",
+                          last_name: "Beauregard",
+                          email: "nancy_money@gmail.com",
+                          password: "password",
+                          phone_number: "819-399-1919",
+                          address: "1000 The Boulevard, Westmount, Canada, B9C9D9",
+                          is_musician: false,
+)
 
 #and here are our 10 musicians/groups
 boran_zaza = User.create!(first_name: "Boran",
@@ -46,9 +107,7 @@ boran_zaza = User.create!(first_name: "Boran",
                           repertoire_2: "Armenians colours",
                           repertoire_2_length: "50 minutes",
                           is_musician: true,
-
 )
-
 
 michel_alexandre_broekaert = User.create!(first_name: "Michel-Alexandre",
                                           last_name: "Broekaert",
@@ -72,9 +131,7 @@ michel_alexandre_broekaert = User.create!(first_name: "Michel-Alexandre",
                                           repertoire_2: "Russian moods",
                                           repertoire_2_length: "60 minutes",
                                           is_musician: true,
-
 )
-
 
 noemie_raymond_friset = User.create!(first_name: "Noémie",
                                     last_name: "Raymond-Friset",
@@ -105,7 +162,6 @@ noemie_raymond_friset = User.create!(first_name: "Noémie",
                                     repertoire_2_length: "50 minutes",
                                     is_musician: true,
 )
-
 
 quatuor_despax = User.create!(first_name: "Quatuor",
                               last_name: "Despax",
@@ -158,30 +214,6 @@ carlos_avila = User.create!(first_name: "Carlos",
                             is_musician: true,
 )
 
-# trio_de_l_ile = User.create!(first_name: "Trio",
-#                             last_name: "de l’Île",
-#                             email: "triodelile@gmail.com",
-#                             password:  "password",
-#                             phone_number: "433-398-1599",
-#                             address: "67-8999 rue Faust, Montreal, Canada, F6G7H8",
-#                             photo: "https://static.wixstatic.com/media/a5c9d2_b0210fa9186644efaa526c5db64e2b53~mv2_d_5616_3744_s_4_2.jpg/v1/fill/w_1569,h_1046,al_c,q_90,usm_0.66_1.00_0.01/a5c9d2_b0210fa9186644efaa526c5db64e2b53~mv2_d_5616_3744_s_4_2.webp",
-#                             video: "https://www.youtube.com/embed/n4oluO4Oov0",
-#                             bio: "Tous trois anciens boursiers de la Fondation de soutien aux arts de Laval (FSAL), les membres de ce trio, formé en 2015 profitent de leur résidence à la série Les Déjeuners croissants-musique de la Maison des Arts de Laval pour promouvoir l’œuvre philanthropique de la Fondation. Élus ambassadeurs de la FSAL, ces musiciens dont la rigoureuse formation classique se reconnaît dans la justesse et le sérieux de leurs interprétations se produisent avec brio un peu partout sur les scènes du pays. Les concerts du trio de l’Île se démarquent par leur qualité et leur accessibilité auprès d’un public varié. Le trio est régulièrement invité à jouer dans la série « Matinées en Musique » de l’orchestre symphonique de Trois-Rivières et lors des concerts de professeurs de la faculté de musique de l’Université de Montréal.",
-#                             price: "900",
-#                             ensemble_type: "trio",
-#                             instruments: "piano/cello/violin",
-#                             facebook: "https://www.facebook.com/triodelile",
-#                             youtube: "https://www.youtube.com/channel/UCKJUR6e0PSXb_L3Q5YnXu3Q",
-#                             website: "http://www.triodelile.com/",
-#                             instagram: "none",
-#                             repertoire_1: "Paris Postcard",
-#                             repertoire_1_length: "60 minutes",
-#                             repertoire_2: "When female composers shines!",
-#                             repertoire_2_length: "70 minutes",
-#                             is_musician: true
-
-# duo
-
 juan_miguel_hernandez = User.create!(first_name: "Juan-Miguel",
                             last_name: "Hernandez",
                             email: "jmh@jmhernandez.com",
@@ -203,7 +235,6 @@ juan_miguel_hernandez = User.create!(first_name: "Juan-Miguel",
                             repertoire_2: "From my heart...",
                             repertoire_2_length: "50 minutes",
                             is_musician: true,
-
 )
 
 suzanne_taffot = User.create!(first_name: "Suzanne",
@@ -229,8 +260,6 @@ suzanne_taffot = User.create!(first_name: "Suzanne",
                             is_musician: true,
 )
 
-
-
 duo_nox = User.create!(first_name: "Duo",
                             last_name: "Nox",
                             email: "uo.nox514@gmail.comm",
@@ -253,8 +282,6 @@ duo_nox = User.create!(first_name: "Duo",
                             repertoire_2_length: "50 minutes",
                             is_musician: true,
 )
-
-
 
 quatuor_cobalt = User.create!(first_name: "Quatuor",
                             last_name: "Cobalt",
@@ -279,7 +306,6 @@ quatuor_cobalt = User.create!(first_name: "Quatuor",
                             is_musician: true,
 )
 
-
 julien_leblanc = User.create!(first_name: "Julien",
                             last_name: "Leblanc",
                             email: "julienleblanc.piano@gmail.com",
@@ -288,7 +314,7 @@ julien_leblanc = User.create!(first_name: "Julien",
                             address: "67-8989 rue Fauré, Montreal, Canada, J0K1L2",
                             photo: "https://www.google.com/imgres?imgurl=https%3A%2F%2Farts.uottawa.ca%2Fmusic%2Fsites%2Farts.uottawa.ca.music%2Ffiles%2Fjulian_leblanc.jpg&imgrefurl=https%3A%2F%2Farts.uottawa.ca%2Fmusic%2Fpeople%2Fleblanc-julien&tbnid=1kqg-52fBKLujM&vet=12ahUKEwiuj7nZhMvrAhUNyawKHQCdBo0QMygBegUIARCQAQ..i&docid=Y7hy4hBdf5p_nM&w=867&h=867&q=julien%20leblanc%20piano&ved=2ahUKEwiuj7nZhMvrAhUNyawKHQCdBo0QMygBegUIARCQAQ",
                             video: "https://www.youtube.com/embed/DJ8jmkDhlXk",
-                            bio: "",
+                            bio: "A virtuoso whose enthusiasm is genuinely contagious, Canadian pianist Julien LeBlanc is renowned for his great musical sensibility and his talent as a communicator. Based in Montreal, Julien is a well sought-after soloist, chamber player and accompanist.  In 2015, he launched his first solo album “Mélancolies” which is dedicated a program of works by Dutilleux, Franck and Poulenc. The album was really well received: “LeBlanc proved a more than able interpreter, playing with warmth, clarity and flowing lyricism, all with a natural rhythmic sense. »  (Ruthland Herald) . « He handles every twist and turn with brio, his phrasing is analytical, and his brilliant technique puts him in a class of his own….His interpretation is always true, played with care, and packed with warmth. » (La Scena Musicale) He has also recorded two albums as a member of Trio Arkaède. Since 2012, Julien has been acting as co-artistic director of the summer concert series Barachois Summer Music in New-Brunswick. He has taken part in many concert tours across Canada with violinist Marc Djokic as well as soprano Miriam Khalil and Mezzo Lauren Segal for Jeunesses Musicales du Canada and Debut Atlantic. He is a part-time teacher at the University of Ottawa and works as a vocal coach and accompanist both at McGill University and Université de Montréal. He has given master classes in several universities across Canada and his frequently asked to sit on juries for music competitions. Julien LeBlanc is presently acting as Chair of the Board of Directors for Debut Atlantic.",
                             price: "750",
                             ensemble_type: "solo",
                             instruments: "piano",
@@ -303,6 +329,49 @@ julien_leblanc = User.create!(first_name: "Julien",
                             is_musician: true,
 )
 
+#here are the reviews of our 7 customers:
+aaron_sherbatsky = Review.create!(rating: 5,
+                        content: "Fabulous musician!! My guests were very impressed!",
+                        customer_id: 2,
+                        musician_id: 10,
+)
+
+bedros_babadjanian = Review.create!(rating: 5,
+                      content: "This moment of music changed my life! What an amazing musician!",
+                      customer_id: 3,
+                      musician_id: 10,
+)
+
+charles_péloquin = Review.create!(rating: 5,
+                          content: "I appreciated very much this pianist; we all had a wonderful moment. I strongly recommend him!",
+                          customer_id: 4,
+                          musician_id: 10,
+)
+
+david_bordeleau = Review.create!(rating: 5,
+                        content: "Wow wow wow!! I hired this pianist as a surprise for my wife's birthday! Now I'm husband of the year!! What an extraordinary musician!!!!",
+                        customer_id: 5,
+                        musician_id: 10,
+)
+
+edward_longshire = Review.create!(rating: 3,
+                        content: "It was good, but I've seen better...",
+                        customer_id: 6,
+                        musician_id: 9,
+)
+
+edwidge_seinfeld = Review.create!(rating: 2,
+                          content: "Arrived late. I was not impressed..",
+                          customer_id: 7,
+                          musician_id: 9,
+)
+
+fanny_beauregard = Review.create!(rating: 4,
+                        content: "Good performance, I guess..",
+                        customer_id: 8,
+                        musician_id: 9,
+)
+
 
 
 Booking.create!(customer: nancy_shapiro,
@@ -311,7 +380,7 @@ Booking.create!(customer: nancy_shapiro,
                 repertoire_number: 1,
                 status: "pending",
                 location:"1000 The Boulevard, Westmount, Canada, B9C9D9",
-                comments:"my backyard okay?",
+                comments:"Are you allergic to cats?",
 )
 
 
