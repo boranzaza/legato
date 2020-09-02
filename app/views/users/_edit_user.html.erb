@@ -1,11 +1,15 @@
-<%= link_to "< Home", root_path %>
-<%= simple_form_for @user, url: user_path(current_user)  do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :email, input_html: { autocomplete: 'email' } %>
-  <%= f.input :password, input_html: { autocomplete: 'current-password' } %>
-  <%= f.input :phone_number %>
-  <%= f.input :address %>
-  <%= f.submit "Update my profile" %>
-<% end %>
+<button type="button" class="btn_home" style="padding-left: 30px; "> <%= link_to "< Home", root_path %>
+</button>
+<div class="form-style">
+  <h1 style="text-align: center;"> UPDATE PROFILE </h1>
+  <%= simple_form_for @user, url: user_path(current_user)  do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :email, input_html: { autocomplete: 'email' } %>
+    <%= f.input :password, input_html: { autocomplete: 'current-password' } %>
+    <%= f.input :phone_number %>
+    <%= f.input :address %>
+    <%= f.submit "Update my profile" , class: "btn-primary"%>
+  <% end %>
+</div>
