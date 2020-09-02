@@ -1,15 +1,26 @@
-<h1>LEAVE A REVIEW</h1>
-
+<button type="button" class="btn_home" style="padding-left: 30px; "> <%= link_to "< Home", musicians_path %>
+    </button>
+  <div class="row justify-content-center">
+    <h1>LEAVE A REVIEW</h1>
+  </div>
 <div class="container">
-  <div class="review-form">
-    <% star_empty = '<i class="far fa-star"></i>' %>
-    <% star_half = '<i class="fas fa-star-half-alt"></i>' %>
-    <% star_full = '<i class="fas fa-star"></i>' %>
-    <%= simple_form_for @review, url: user_reviews_path(current_user) do |t|%>
-      <%= t.input :musician_id, as: :string, input_html: { value: @musician.id, class: "d-none" }, label: false %>
-      <%= t.input :rating, as: :radio_buttons, collection: [['Absolute disaster - 1', 1], ['Seen worse - 2', 2], ['Meh - 3', 3], ['Good - 4', 4], ['Fabulous - 5', 5]] %>
-      <%= t.input :content, as: :text %>
-      <%= t.submit "Submit review" %>
-    <%end%>
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-6 col-xl-6 ">
+      <div class="form-login">
+        <div class="container">
+          <div class="review-form">
+            <% star_empty = '<i class="far fa-star"></i>' %>
+            <% star_half = '<i class="fas fa-star-half-alt"></i>' %>
+            <% star_full = '<i class="fas fa-star"></i>' %>
+            <%= simple_form_for @review, url: user_reviews_path(current_user) do |t|%>
+              <%= t.input :musician_id, as: :string, input_html: { value: @musician.id, class: "d-none" }, label: false %>
+              <%= t.input :rating, as: :radio_buttons, collection: [['★', 1], ['★★', 2], ['★★★', 3], ['★★★★', 4], ['★★★★★', 5]] %>
+              <%= t.input :content, label: "Comment", as: :text %>
+              <%= t.submit "Submit review" %>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
