@@ -23,8 +23,14 @@
           <p><strong>Comments:</strong> <%= booking.comments %></p>
           <div class="row justify-content-center">
             <div class="d-flex">
-              <p style="margin-right: 20px"><%= link_to 'Accept', approve_path(id: booking.id), method: :patch, class: "btn btn-primary"%></p>
-              <p style="margin-left: 20px"><%= link_to 'Decline', reject_path(id: booking.id), method: :patch, class: "btn btn-danger" %></p>
+              <% if booking.status.nil?  %>
+              <p style="margin-right: 20px"><%= link_to 'Accept', approve_path(id: booking.id), method: :patch, class: "btn btn-primary", remote: true %></p>
+              <p style="margin-left: 20px"><%= link_to 'Decline', reject_path(id: booking.id), method: :patch, class: "btn btn-danger", remote: true %></p>
+              <% elsif booking.status == true %>
+                <p class="btn btn-info" style="background-color: #4CAF50; border-color: #4CAF50">Booking Accepted</p>
+              <% else %>
+                <p class="btn btn-warning">Booking Declined</p>
+              <% end %>
             </div>
           </div>
         </div>
