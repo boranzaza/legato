@@ -244,3 +244,25 @@
   position: absolute;
   right: 38%;
 }
+
+.btn-send-message {
+  background-color: #846000;
+  color: white;
+  border: none;
+  padding: 5px 40px;
+  border-radius: 8px;
+  font-weight: bold;
+  opacity: 1;
+  width: auto;
+  height: auto;
+  transition: background-color 0.5s;
+  overflow: hidden;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.btn-send-message:hover{
+   background:#fff;
+   box-shadow:0px 1px 1px 1px rgba(132, 96, 0, 0.2);
+   color: #846000;
+}

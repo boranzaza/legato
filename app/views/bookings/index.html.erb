@@ -23,6 +23,7 @@
           <p><strong>Comments:</strong> <%= booking.comments %></p>
           <div class="row justify-content-center">
             <div class="d-flex">
+              <p style="margin-right: 20px"><%= link_to 'Send a message', user_chatrooms_path(booking.customer), method: :post, class: "btn btn-send-message" %></p>
               <p style="margin-right: 20px"><%= link_to 'Accept', approve_path(id: booking.id), method: :patch, class: "btn btn-primary"%></p>
               <p style="margin-left: 20px"><%= link_to 'Decline', reject_path(id: booking.id), method: :patch, class: "btn btn-danger" %></p>
             </div>
@@ -48,12 +49,12 @@
               <p><strong>Price: </strong><%= User.find(booking.musician_id).price %> $</p>
 
             <div class="d-flex">
-
                 <p><strong>Booking status:</strong>
                   <% if booking.status == true %>
                     Accepted</p>
                       <div class="row justify-content-center">
                        <p style="margin-left: 220px"> <%= link_to "CANCEL BOOKING", booking_path(booking), method: :delete, class: "btn btn-cancel-booking" %> </p>
+                       <p style="margin-right: 20px"><%= link_to 'Send a message', user_chatrooms_path(booking.customer), method: :post, class: "btn btn-send-message" %></p>
                       </div>
 
                   <% elsif booking.status == false %>
@@ -62,9 +63,9 @@
                     Pending</p>
                     <div class="row justify-content-center">
                       <p style="margin-left: 220px"> <%= link_to "CANCEL BOOKING", booking_path(booking), method: :delete, class: "btn btn-cancel-booking" %> </p>
+                      <p style="margin-right: 20px"><%= link_to 'Send a message', user_chatrooms_path(booking.customer), method: :post, class: "btn btn-send-message" %></p>
                     </div>
                   <% end %>
-
             </div>
         </div>
       <% end %>
