@@ -1,0 +1,26 @@
+.chatroom {
+  display: flex;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #eee;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.recipient {
+  padding: 10px;
+}
+
+.chatroom-info {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.last-message {
+  display: flex;
+  flex-direction: column;
+  color: grey;
+  text-align: right;
+}
