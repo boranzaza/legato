@@ -1,18 +1,22 @@
 // fontanello & color picker : make sure you have these extensions
-.musicians-instrument {
-  height: 74px;
+.card-text {
+  font-size: 15px;
+  color: #0D253D;
+  margin-bottom: 5px;
+  text-transform: capitalize;
 }
 
 .card-bottom-text {
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 0;
+  color: #0D253D;
 }
 
 .card-title h2 {
   text-align: center;
   font-family: Roboto;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 17px;
   color: #866200;
   text-transform: uppercase;
 }
@@ -27,15 +31,16 @@
 .musician-picture {
   max-width: 100%;
   height: auto;
+  border-radius: inherit;
 }
 
 .musician-card {
   margin: 10px;
 }
 
-#card-line {
-  border: 1px solid rgba(0, 0, 150, 0.3);
+// #card-line {
+//   border: 0.5px solid rgba(0, 0, 150, 0.3);
 
-}
+// }
 
 // text-transform css property
