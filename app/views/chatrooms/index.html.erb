@@ -9,9 +9,11 @@
         <% if current_user.is_musician %>
           <%= cl_image_tag "Nancy_ikk7f1", class: "avatar dropdown-toggle", id: "navbarDropdown" %>
           <div class="chatroom-info">
-            <div class="recipient"><%= User.find(chatroom.customer_id).full_name %></div>
+            <div class="recipient"><%= chatroom.customer.full_name %></div>
             <div class="last-message">
-              <% if chatroom.messages.last.user == current_user %>
+              <% if chatroom.messages == [] %>
+                <% return "" %>
+              <% elsif chatroom.messages.last.user == current_user %>
                 You:
               <% end %>
               <%= chatroom.messages.last.content %>
@@ -22,10 +24,13 @@
         <% else %>
           <%= cl_image_tag chatroom.musician.photo, class: "avatar dropdown-toggle", id: "navbarDropdown" %>
           <div class="chatroom-info">
-            <div class="recipient"><%= User.find(chatroom.musician_id).full_name %></div>
+            <div class="recipient"><%= chatroom.musician.full_name %></div>
             <div class="last-message">
-              <% if chatroom.messages.last.user == current_user %>
-                You:
+
+              <% if chatroom.messages == [] %>
+                <% return "" %>
+              <% elsif chatroom.messages.last.user == current_user %>
+                 You:
               <% end %>
               <%= chatroom.messages.last.content %>
               <small><%= time_ago_in_words(chatroom.messages.last.created_at) %> ago</small>
@@ -38,4 +43,3 @@
     <% end %>
   <% end %>
 </div>
-
