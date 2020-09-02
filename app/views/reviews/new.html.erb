@@ -14,7 +14,14 @@
             <% star_full = '<i class="fas fa-star"></i>' %>
             <%= simple_form_for @review, url: user_reviews_path(current_user) do |t|%>
               <%= t.input :musician_id, as: :string, input_html: { value: @musician.id, class: "d-none" }, label: false %>
-              <%= t.input :rating, as: :radio_buttons, collection: [['★', 1], ['★★', 2], ['★★★', 3], ['★★★★', 4], ['★★★★★', 5]] %>
+              <div class="row star-rating justify-content-center">
+                <div data-value="1" class="star"><i class="far fa-star"></i></div>
+                <div data-value="2" class="star"><i class="far fa-star"></i></div>
+                <div data-value="3" class="star"><i class="far fa-star"></i></div>
+                <div data-value="4" class="star"><i class="far fa-star"></i></div>
+                <div data-value="5" class="star"><i class="far fa-star"></i></div>
+              </div>
+              <%= hidden_field_tag "review[rating]", "", id: "review_rating" %>
               <%= t.input :content, label: "Comment", as: :text %>
               <%= t.submit "Submit review" %>
             <%end%>
