@@ -1,9 +1,28 @@
 <div class="container">
-<!-- <p>Pages#home</p> -->
-<!-- <p>Find me in app/views/pages/home.html.erb</p> -->
-  <div class="text-center">
-    <h1> Welcome to Legato </h1>
-    <h2> Classical music concerts <br> in your living room </h2>
-    <%= link_to "Click Here to Browse Musicians", musicians_path, class: "btn btn-primary" %>
-  </div>
+
+    <div class="text-center">
+          <h1 class="h1-home-page"> WELCOME TO  </h1>
+
+          <div class="big-logo-home-page big-logo">
+            <%= cl_image_tag "https://res.cloudinary.com/boranzaza/image/upload/v1598641795/Legato_-_logo_bvyl9o.png" %>
+          </div>
+
+          <div class="home-page-slogan">
+            <p> CLASSICAL MUSIC CONCERTS <br> IN YOUR LIVING ROOM </p>
+            <%= link_to "Click Here to Browse Musicians", musicians_path, class: "btn btn-primary" %>
+          </div>
+ <br>
+
+
+
+    </div>
+
 </div>
+
+<div class="chamber-music-picture">
+
+ <%= cl_image_tag "https://res.cloudinary.com/boranzaza/image/upload/v1599016879/chopin_concert_cz6h4w.jpg" %>
+</div>
+
+
+<!-- https://res.cloudinary.com/boranzaza/image/upload/v1599016357/chopin_concert_ypo8eh.jpg -->
