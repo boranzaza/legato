@@ -5,6 +5,10 @@
     <div class="legato-navbar-items">
       <% if user_signed_in? %>
         <div class="nav-item-active">
+          <%= link_to "Inbox", chatrooms_path, class: "btn-primary small-btn" %>
+        </div>
+
+        <div class="nav-item-active">
           <%= link_to "My Bookings", bookings_path, class: "btn-primary small-btn" %>
         </div>
 

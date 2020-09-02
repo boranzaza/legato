@@ -1,7 +1,8 @@
-<div class="message-container is-current-user-<%= message.user == current_user %>" id="message-<%= message.id %>">
-  <i class="author">
-    <span><%= message.user.full_name %></span>
-    <small><%= time_ago_in_words(message.created_at) %> ago</small>
-  </i>
-  <p><%= message.content %></p>
+<div class="message is-current-user-<%= message.user == current_user %>" id="message-<%= message.id %>">
+  <small><%= time_ago_in_words(message.created_at) %> ago</small>
+  <!-- Only make the time visible for the last message,
+    has no added value for the others -->
+  <div class="message-text">
+    <%= message.content %>
+  </div>
 </div>
