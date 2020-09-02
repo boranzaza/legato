@@ -19,11 +19,15 @@
       <%= f.input :date_time, as: :time %>
       <%= f.input :location, as: :string, input_html: { value: current_user.address } %>
       <%= f.input :comments, as: :text %>
-      <div>
+      <div class="row justify-content-center">
         <%= f.submit "Confirm Booking Request", class: "btn btn-primary" %>
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-          <div>
-            Cancel
+      </div>
+          <div class="row justify-content-center">
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+
+              <div>
+                Cancel
+              </div>
           </div>
         </button>
       </div>
