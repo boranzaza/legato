@@ -181,6 +181,54 @@ trio_de_l_ile = User.create!(first_name: "Trio",
 
 )
 
+juan_miguel_hernandez = User.create!(first_name: "Juan-Miguel",
+                            last_name: "Hernandez",
+                            email: "jmh@jmhernandez.com",
+                            password:  "password",
+                            phone_number: "433-398-1555",
+                            address: "67-8989 rue Gluck, Montreal, Canada, G7H8I9",
+                            photo: "https://images.squarespace-cdn.com/content/v1/547f740fe4b030e4805432d4/1472070261818-UVXNZXSISTDAI5VPN18U/ke17ZwdGBToddI8pDm48kFWxnDtCdRm2WA9rXcwtIYR7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UcTSrQkGwCGRqSxozz07hWZrYGYYH8sg4qn8Lpf9k1pYMHPsat2_S1jaQY3SwdyaXg/JMH_LiveSepia_1500pxw.jpg?format=1500w",
+                            video: "https://www.youtube.com/watch?v=9zk7k_PRfy8&feature=emb_logo",
+                            bio: "An artist defined by the critics as "…tender, lyrical, loaded with personality" (Atlanta Journal Constitution), French-Canadian violist Juan-Miguel Hernandez is also recognized for drawing "...the sweetest, most sonorous tone..." (Washington Post). In September 2009, Juan-Miguel won the first Prize at the 16th International Johannes Brahms Competition in Austria, adding to other top prizes won at the National Canadian Music Competition, and the 9th National Sphinx Competition in 2006. As a featured guest soloist, Juan-Miguel has appeared with the Atlanta, Seattle, Colorado Symphonies, the Rochester Philharmonic and the Chicago Sinfonietta. In 2010, he was recognized with the medal of honor from the National Assembly of Quebec for his significant International accomplishments. A dedicated chamber musician, Juan-Miguel was a member of the legendary Fine Arts Quartet and original member of the Harlem Quartet (2006-2012) as well as a founder of  "Trio Virado" (Flute, Viola, Guitar). His musicianship has led to a wide array of collaborations with artists such as Itzhak Perlman, Lynn Harrell, Kim Kashkashian and Gerard Caussé as well as Chick Corea, Gary Burton and Stanley Clark. Juan-Miguel is Professor of Viola at the Royal Academy of Music in London.",
+                            price: "1000",
+                            ensemble_type: "duo",
+                            instruments: "viola/piano",
+                            facebook: "none",
+                            youtube: "https://www.youtube.com/user/SideShowMig",
+                            website: "jmhernandez.com/",
+                            instagram: "jmh_violist",
+                            repertoire_1: "Be for Brahms",
+                            repertoire_1_length: "60 minutes",
+                            repertoire_2: "From my heart...",
+                            repertoire_2_length: "50 minutes",
+                            is_musician: true
+
+)
+
+suzanne_taffot = User.create!(first_name: "Suzanne",
+                            last_name: "Taffot",
+                            email: "www.suzytaffot.com",
+                            password:  "password",
+                            phone_number: "433-398-1444",
+                            address: "67-8989 rue Hahn, Montreal, Canada, H8I9J0",
+                            photo: "https://static.wixstatic.com/media/23c3b5_26d1e8720457483d8348e3e66b145c74~mv2.jpg/v1/fill/w_620,h_992,al_c,q_85,usm_0.66_1.00_0.01/new%20pic%20Suzanne%20Taffot%20.webp",
+                            video: "https://www.youtube.com/watch?v=bbHVaeTefOA",
+                            bio: "Suzanne Taffot se distingue par son riche timbre de soprano lyrique et sa touchante interprétation. Elle fera son grand début en octobre prochain sous la direction du renommé Maestro Yannick Nézet-Séguin et son Orchestre Métropolitain. Elle est la Mimi incarnée  ( La Bohème de Puccini) qu'elle a tenu avec immense succès, en Mars 2019,  au Gärtnerplaztheater en Allemagne et qu'elle interprétera avec le FestivalOpéra des Grandes Laurentides en juillet 2021 sous la direction de Maestro Alain Trudel et son Orchestre Symphonique de Laval. Sur scène, on a récemment pu la voir et l’entendre au gala de la prestigieuse soirée lyrique opéra Montréal-Moscou avec l’orchestre de l’ensemble sinfonia sous la direction de Maestro Louis Lavigueur où elle a été désignée par la critique comme étant « une voix à suivre ». On a également pu l’entendre au gala des Jeunes Ambassadeurs Lyriques avec l’Orchestre philharmonique des musiciens de Montréal ; dans le rôle de Fiodiligi (Cosi fan tutte) avec la compagnie OperAmor; au concert « jeunes talents » avec les Chorégies d’Orange en France, dans le rôle titre de Mimi (La Bohème) avec la compagnie OperAmor; dans le rôle de Pamina (Die Zauberflote) avec le camp musical Saguenay Saint Jean. Nommée Jeune espoir lyrique Québécoise 2017-2018, Suzanne Taffot, originaire du Cameroun, est une jeune soprano qui se distingue par son riche timbre de soprano lyrique et sa touchante interprétation. Trois fois lauréate des Jeunes Ambassadeurs Lyriques 2014, 2015 et 2017, elle a remporté une quinzaine de bourses et prix dont la bourse lyrique Québec-Bavière pour effectuer un stage de perfectionnement au Junge Ensemble du Staastoper à Munich, une bourse pour effectuer des auditions en Europe (Pays-Bas, France, Italie, Allemagne) auprès des directeurs de compagnies d’opéra, ainsi qu’une bourse lyrique Tchèque et Slovaque pour un concert avec l’Orchestre Philharmonique de Kosice en Slovaquie en tant que soliste. Elle a décroché son diplôme avec la mention « excellent » à l’unanimité lors de son examen final de maîtrise à l’Université. Elle est reconnue pour son timbre unique, riche et coloré. Sa présence et son aisance sur scène ainsi que ses interprétations profondes, émouvantes et authentiques font de Suzanne Taffot une artiste lyrique à l’avenir certain.",
+                            price: "1000",
+                            ensemble_type: "duo",
+                            instruments: "voix(soprano)/piano",
+                            facebook: "none",
+                            youtube: "https://www.youtube.com/user/taffotsuzy",
+                            website: "https://en.lmopera.com/suzanne-taffot-soprano-",
+                            instagram: "https://www.instagram.com/explore/tags/suzannetaffot/",
+                            repertoire_1: "Famous italian arias",
+                            repertoire_1_length: "60 minutes",
+                            repertoire_2: "Summertime",
+                            repertoire_2_length: "50 minutes",
+                            is_musician: true
+
+)
+
 Booking.create!(customer: nancy_shapiro,
                 musician: boran_zaza,
                 date_time: 1.day.ago,
@@ -190,29 +238,4 @@ Booking.create!(customer: nancy_shapiro,
                 comments:"my backyard okay?",
 )
 
-#
 
-
-
-
-# require "json"
-# require "rest-client"
-
-# TOP_STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json"
-
-# def story_url(id)
-#   "https://hacker-news.firebaseio.com/v0/item/#{id}.json"
-# end
-
-# post_ids = JSON.parse(RestClient.get(TOP_STORIES_URL))
-
-# post_ids.take(10).each do |id|
-#   hacker_news_post = JSON.parse(RestClient.get(story_url(id)))
-#   post = Post.new(
-#     title: hacker_news_post["title"],
-#     url: hacker_news_post["url"],
-#     votes: hacker_news_post["score"]
-#   )
-#   post.save
-#   puts "[#{post.votes}] #{post.title} - #{post.url}"
-# end
