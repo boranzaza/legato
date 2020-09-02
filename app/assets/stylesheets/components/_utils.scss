@@ -17,7 +17,6 @@
   }
 }
 
-
 .social-media-icons {
   color: #846000;
   &:hover {
@@ -25,3 +24,53 @@
   }
   font-size: 50px;
 }
+
+
+
+// home-page
+.big-logo-home-page{
+  display:flex ;
+  // border: 3px solid red;
+  align-items: center;
+  padding-left: 159px;
+  padding-top: 20px;
+  padding-bottom: 16px;
+}
+
+.big-logo img{
+  width: 370px;
+}
+
+.container{
+  // border: 3px solid green;
+}
+
+.text-center{
+    // border: 3px solid blue;
+}
+
+.home-page-slogan{
+   // border: 3px solid yellow;
+ font-size: 24px;
+ font-weight: 700;
+}
+
+.h1-home-page{
+  color: $blue;
+  font-size: 24px;
+}
+
+.chamber-music-picture img{
+  width: 768px;
+  margin-top: 63px;
+}
+
+
+.form-control{
+  margin-right: 18px;
+}
+
+
+
+
+
