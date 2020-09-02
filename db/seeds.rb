@@ -9,6 +9,10 @@ Booking.destroy_all
 User.destroy_all
 Review.destroy_all
 
+puts "creating customers"
+
+
+
 #here is our persona:
 nancy_shapiro = User.create!(first_name: "Nancy",
                           last_name: "Shapiro",
@@ -22,66 +26,69 @@ nancy_shapiro = User.create!(first_name: "Nancy",
 #here are 7 more customers (their reviews starts at line 333:
 aaron_sherbatsky = User.create!(first_name: "Aaron",
                           last_name: "Sherbatsky",
-                          email: "nancy_money@gmail.com",
+                          email: "aaron_dollar@gmail.com",
                           password: "password",
-                          phone_number: "819-399-1919",
-                          address: "1000 The Boulevard, Westmount, Canada, B9C9D9",
+                          phone_number: "514-399-2019",
+                          address: "54 Sherbrooke, Westmount, Canada, C9C9D9",
                           is_musician: false,
 )
 
 bedros_babadjanian = User.create!(first_name: "Bedros",
                           last_name: "Babadjanian",
-                          email: "nancy_money@gmail.com",
+                          email: "bedros_cash@gmail.com",
                           password: "password",
-                          phone_number: "819-399-1919",
-                          address: "1000 The Boulevard, Westmount, Canada, B9C9D9",
+                          phone_number: "514-399-2119",
+                          address: "360 Graham, Town of Mount-Royal, Canada, D9C9D9",
                           is_musician: false,
 )
 
 charles_péloquin = User.create!(first_name: "Charles",
                           last_name: "Péloquin",
-                          email: "nancy_money@gmail.com",
+                          email: "charles_dough@gmail.com",
                           password: "password",
-                          phone_number: "819-399-1919",
-                          address: "1000 The Boulevard, Westmount, Canada, B9C9D9",
+                          phone_number: "438-399-2219",
+                          address: "367 Bernard Avenue, Outremont, Canada, E9C9D9",
                           is_musician: false,
 )
 
 david_bordeleau = User.create!(first_name: "David",
                           last_name: "Bordeleau",
-                          email: "nancy_money@gmail.com",
+                          email: "david_ace@gmail.com",
                           password: "password",
-                          phone_number: "819-399-1919",
-                          address: "1000 The Boulevard, Westmount, Canada, B9C9D9",
+                          phone_number: "418-399-2319",
+                          address: "14, Boulevard Rene-Levesque, Quebec, Canada, F9C9D9",
                           is_musician: false,
 )
 
 edward_longshire = User.create!(first_name: "Edward",
                           last_name: "Longshire",
-                          email: "nancy_money@gmail.com",
+                          email: "edward_diamond@gmail.com",
                           password: "password",
-                          phone_number: "819-399-1919",
-                          address: "1000 The Boulevard, Westmount, Canada, B9C9D9",
+                          phone_number: "514-399-2419",
+                          address: "1200 Peel, Westmount, Canada, G9C9D9",
                           is_musician: false,
 )
 
 edwidge_seinfeld = User.create!(first_name: "Edwidge",
                           last_name: "Seinfeld",
-                          email: "nancy_money@gmail.com",
+                          email: "edwidge_gold@gmail.com",
                           password: "password",
-                          phone_number: "819-399-1919",
-                          address: "1000 The Boulevard, Westmount, Canada, B9C9D9",
+                          phone_number: "514-399-2519",
+                          address: "5778 Laird Avenue, Kirkland, Canada, H9C9D9",
                           is_musician: false,
 )
 
 fanny_beauregard = User.create!(first_name: "Fanny",
                           last_name: "Beauregard",
-                          email: "nancy_money@gmail.com",
+                          email: "fanny_ruby@gmail.com",
                           password: "password",
-                          phone_number: "819-399-1919",
-                          address: "1000 The Boulevard, Westmount, Canada, B9C9D9",
+                          phone_number: "450-399-2619",
+                          address: "3461 Van Horne, Outremont, Canada, K9C9D9",
                           is_musician: false,
 )
+
+puts "customers created"
+puts "creating musicians"
 
 #and here are our 10 musicians/groups
 boran_zaza = User.create!(first_name: "Boran",
@@ -118,7 +125,7 @@ michel_alexandre_broekaert = User.create!(first_name: "Michel-Alexandre",
                                           photo: "https://i1.wp.com/www.broekaert.space/wp-content/uploads/2019/03/MG_0884-2.jpg?strip=info&w=2000",
                                           video: "https://www.youtube.com/embed/FwSrdfUp8tM",
                                           bio: "Recognized for his profound and spectacular interpretations, Quebec pianist Michel-Alexandre Broekaert is one of the most promising musicians of his generation. Early on, he developed a passion for accompaniment and chamber music, making his experience as vast as eclectic. At ease both on stage and in the studio, he divides his time between the instrumental repertoire and the world of opera with equal pleasure. A pedagogue at heart, his activities as a coach / pianist-collaborator at the Université de Montréal and at McGill University nourish his passion for passing on knowledge to generations of young musicians. He is also committed to the future of classical music, actively engaging with established organizations and collectives of experienced musicians to present this art form in an accessible and casual way. Michel-Alexandre is very active in the Quebec scene and regularly collaborates with many organizations, such as the Canadian Institute of Vocal Art, Opéra de Montréal, the OSM-Manuvie competition, Opéra à la Carte, as well as the collective Un Opéra Une Heure.  He is the the winner of several national and international competitions, and holds a doctorate from the Université de Montréal, under the tutelage of Mr. Jean Saulnier,
-                                          “He is an excellent listener […] and has a remarkable touch. In his hands, the music breathes and blossoms.” – Revue Opéra",
+                                          'He is an excellent listener […] and has a remarkable touch. In his hands, the music breathes and blossoms.' – Revue Opéra",
                                           price: "400",
                                           ensemble_type: "solo",
                                           instruments: "piano",
@@ -222,7 +229,7 @@ juan_miguel_hernandez = User.create!(first_name: "Juan-Miguel",
                             address: "67-8989 rue Gluck, Montreal, Canada, G7H8I9",
                             photo: "https://images.squarespace-cdn.com/content/v1/547f740fe4b030e4805432d4/1472070261818-UVXNZXSISTDAI5VPN18U/ke17ZwdGBToddI8pDm48kFWxnDtCdRm2WA9rXcwtIYR7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UcTSrQkGwCGRqSxozz07hWZrYGYYH8sg4qn8Lpf9k1pYMHPsat2_S1jaQY3SwdyaXg/JMH_LiveSepia_1500pxw.jpg?format=1500w",
                             video: "https://www.youtube.com/embed/9zk7k_PRfy8&feature=emb_logo",
-                            bio: "An artist defined by the critics as "…tender, lyrical, loaded with personality" (Atlanta Journal Constitution), French-Canadian violist Juan-Miguel Hernandez is also recognized for drawing "...the sweetest, most sonorous tone..." (Washington Post). In September 2009, Juan-Miguel won the first Prize at the 16th International Johannes Brahms Competition in Austria, adding to other top prizes won at the National Canadian Music Competition, and the 9th National Sphinx Competition in 2006. As a featured guest soloist, Juan-Miguel has appeared with the Atlanta, Seattle, Colorado Symphonies, the Rochester Philharmonic and the Chicago Sinfonietta. In 2010, he was recognized with the medal of honor from the National Assembly of Quebec for his significant International accomplishments. A dedicated chamber musician, Juan-Miguel was a member of the legendary Fine Arts Quartet and original member of the Harlem Quartet (2006-2012) as well as a founder of  "Trio Virado" (Flute, Viola, Guitar). His musicianship has led to a wide array of collaborations with artists such as Itzhak Perlman, Lynn Harrell, Kim Kashkashian and Gerard Caussé as well as Chick Corea, Gary Burton and Stanley Clark. Juan-Miguel is Professor of Viola at the Royal Academy of Music in London.",
+                            bio: "An artist defined by the critics as '…tender, lyrical, loaded with personality' -Atlanta Journal Constitution, French-Canadian violist Juan-Miguel Hernandez is also recognized for drawing '...the sweetest, most sonorous tone...' -Washington Post. In September 2009, Juan-Miguel won the first Prize at the 16th International Johannes Brahms Competition in Austria, adding to other top prizes won at the National Canadian Music Competition, and the 9th National Sphinx Competition in 2006. As a featured guest soloist, Juan-Miguel has appeared with the Atlanta, Seattle, Colorado Symphonies, the Rochester Philharmonic and the Chicago Sinfonietta. In 2010, he was recognized with the medal of honor from the National Assembly of Quebec for his significant International accomplishments. A dedicated chamber musician, Juan-Miguel was a member of the legendary Fine Arts Quartet and original member of the Harlem Quartet (2006-2012) as well as a founder of  'Trio Virado' -Flute, Viola, Guitar. His musicianship has led to a wide array of collaborations with artists such as Itzhak Perlman, Lynn Harrell, Kim Kashkashian and Gerard Caussé as well as Chick Corea, Gary Burton and Stanley Clark. Juan-Miguel is Professor of Viola at the Royal Academy of Music in London.",
                             price: "1000",
                             ensemble_type: "duo",
                             instruments: "viola/piano",
@@ -239,7 +246,7 @@ juan_miguel_hernandez = User.create!(first_name: "Juan-Miguel",
 
 suzanne_taffot = User.create!(first_name: "Suzanne",
                             last_name: "Taffot",
-                            email: "www.suzytaffot.com",
+                            email: "suzysoprano@gmail.com",
                             password:  "password",
                             phone_number: "433-398-1444",
                             address: "67-8989 rue Hahn, Montreal, Canada, H8I9J0",
@@ -251,7 +258,7 @@ suzanne_taffot = User.create!(first_name: "Suzanne",
                             instruments: "voice(soprano)/piano",
                             facebook: "none",
                             youtube: "https://www.youtube.com/user/taffotsuzy",
-                            website: "https://en.lmopera.com/suzanne-taffot-soprano-",
+                            website: "http://www.suzytaffot.com",
                             instagram: "https://www.instagram.com/explore/tags/suzannetaffot/",
                             repertoire_1: "Famous italian arias",
                             repertoire_1_length: "60 minutes",
@@ -329,6 +336,10 @@ julien_leblanc = User.create!(first_name: "Julien",
                             is_musician: true,
 )
 
+
+puts "musicians created"
+puts "creating reviews"
+
 #here are the reviews of our 7 customers:
 aaron_sherbatsky = Review.create!(rating: 5,
                         content: "Fabulous musician!! My guests were very impressed!",
@@ -372,6 +383,7 @@ fanny_beauregard = Review.create!(rating: 4,
                         musician_id: 9,
 )
 
+puts "reviews created"
 
 
 Booking.create!(customer: nancy_shapiro,
