@@ -60,6 +60,7 @@
                 <p><strong>Price: </strong><%= User.find(booking.musician_id).price %></p>
               </div>
             <div class="row justify-content-center">
+              <%= link_to 'Send a message', user_chatrooms_path(booking.musician), method: :post, class: "btn-primary small-btn"%>
               <p style="margin-left: 220px"> <%= link_to "CANCEL BOOKING", booking_path(booking), method: :delete, class: "btn btn-cancel-booking" %> </p>
             </div> <!-- add here the destroy method -->
         </div>
