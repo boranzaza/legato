@@ -1,17 +1,15 @@
 class UsersController < ApplicationController
-
   def edit
     @user = User.find(params[:id])
   end
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-    @user.save
-    if @user.save
-      redirect_to root_path
+    if @user.update!(user_params)
+      sign_in(current_user, :bypass => true)
+      redirect_to edit_user_path(params[:id])
     else
-      redirect_to edit_user(params[:id])
+      render :edit
     end
   end
 
