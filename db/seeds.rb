@@ -3,27 +3,95 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   movies = Movie.create([ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Booking.destroy_all
 User.destroy_all
 Review.destroy_all
 
-#here is our persona, our only customer:
-nancy_shapiro = User.create!({first_name: "Nancy",
+puts "creating customers"
+
+
+
+#here is our persona:
+nancy_shapiro = User.create!(first_name: "Nancy",
                           last_name: "Shapiro",
                           email: "nancy_money@gmail.com",
                           password: "password",
                           phone_number: "819-399-1919",
                           address: "1000 The Boulevard, Westmount, Canada, B9C9D9",
-                          is_musician: false}
-
+                          is_musician: false,
 )
 
+#here are 7 more customers (their reviews starts at line 333:
+aaron_sherbatsky = User.create!(first_name: "Aaron",
+                          last_name: "Sherbatsky",
+                          email: "aaron_dollar@gmail.com",
+                          password: "password",
+                          phone_number: "514-399-2019",
+                          address: "54 Sherbrooke, Westmount, Canada, C9C9D9",
+                          is_musician: false,
+)
 
+bedros_babadjanian = User.create!(first_name: "Bedros",
+                          last_name: "Babadjanian",
+                          email: "bedros_cash@gmail.com",
+                          password: "password",
+                          phone_number: "514-399-2119",
+                          address: "360 Graham, Town of Mount-Royal, Canada, D9C9D9",
+                          is_musician: false,
+)
 
-#and here are our 6 musicians/groups
-boran_zaza = User.create!({first_name: "Boran",
+charles_péloquin = User.create!(first_name: "Charles",
+                          last_name: "Péloquin",
+                          email: "charles_dough@gmail.com",
+                          password: "password",
+                          phone_number: "438-399-2219",
+                          address: "367 Bernard Avenue, Outremont, Canada, E9C9D9",
+                          is_musician: false,
+)
+
+david_bordeleau = User.create!(first_name: "David",
+                          last_name: "Bordeleau",
+                          email: "david_ace@gmail.com",
+                          password: "password",
+                          phone_number: "418-399-2319",
+                          address: "14, Boulevard Rene-Levesque, Quebec, Canada, F9C9D9",
+                          is_musician: false,
+)
+
+edward_longshire = User.create!(first_name: "Edward",
+                          last_name: "Longshire",
+                          email: "edward_diamond@gmail.com",
+                          password: "password",
+                          phone_number: "514-399-2419",
+                          address: "1200 Peel, Westmount, Canada, G9C9D9",
+                          is_musician: false,
+)
+
+edwidge_seinfeld = User.create!(first_name: "Edwidge",
+                          last_name: "Seinfeld",
+                          email: "edwidge_gold@gmail.com",
+                          password: "password",
+                          phone_number: "514-399-2519",
+                          address: "5778 Laird Avenue, Kirkland, Canada, H9C9D9",
+                          is_musician: false,
+)
+
+fanny_beauregard = User.create!(first_name: "Fanny",
+                          last_name: "Beauregard",
+                          email: "fanny_ruby@gmail.com",
+                          password: "password",
+                          phone_number: "450-399-2619",
+                          address: "3461 Van Horne, Outremont, Canada, K9C9D9",
+                          is_musician: false,
+)
+
+puts "customers created"
+puts "creating musicians"
+
+#and here are our 10 musicians/groups
+boran_zaza = User.create!(first_name: "Boran",
                           last_name: "Zaza",
                           email: "contact@boranzaza.com",
                           password: "password",
@@ -45,11 +113,10 @@ boran_zaza = User.create!({first_name: "Boran",
                           repertoire_1_length: "50 minutes",
                           repertoire_2: "Armenians colours",
                           repertoire_2_length: "50 minutes",
-                          is_musician: true}
-
+                          is_musician: true,
 )
 
-michel_alexandre_broekaert = User.create!({first_name: "Michel-Alexandre",
+michel_alexandre_broekaert = User.create!(first_name: "Michel-Alexandre",
                                           last_name: "Broekaert",
                                           email: "contact@broekaert.space",
                                           password: "password",
@@ -58,7 +125,7 @@ michel_alexandre_broekaert = User.create!({first_name: "Michel-Alexandre",
                                           photo: "https://i1.wp.com/www.broekaert.space/wp-content/uploads/2019/03/MG_0884-2.jpg?strip=info&w=2000",
                                           video: "https://www.youtube.com/embed/FwSrdfUp8tM",
                                           bio: "Recognized for his profound and spectacular interpretations, Quebec pianist Michel-Alexandre Broekaert is one of the most promising musicians of his generation. Early on, he developed a passion for accompaniment and chamber music, making his experience as vast as eclectic. At ease both on stage and in the studio, he divides his time between the instrumental repertoire and the world of opera with equal pleasure. A pedagogue at heart, his activities as a coach / pianist-collaborator at the Université de Montréal and at McGill University nourish his passion for passing on knowledge to generations of young musicians. He is also committed to the future of classical music, actively engaging with established organizations and collectives of experienced musicians to present this art form in an accessible and casual way. Michel-Alexandre is very active in the Quebec scene and regularly collaborates with many organizations, such as the Canadian Institute of Vocal Art, Opéra de Montréal, the OSM-Manuvie competition, Opéra à la Carte, as well as the collective Un Opéra Une Heure.  He is the the winner of several national and international competitions, and holds a doctorate from the Université de Montréal, under the tutelage of Mr. Jean Saulnier,
-                                          “He is an excellent listener […] and has a remarkable touch. In his hands, the music breathes and blossoms.” – Revue Opéra",
+                                          'He is an excellent listener […] and has a remarkable touch. In his hands, the music breathes and blossoms.' – Revue Opéra",
                                           price: "400",
                                           ensemble_type: "solo",
                                           instruments: "piano",
@@ -70,11 +137,10 @@ michel_alexandre_broekaert = User.create!({first_name: "Michel-Alexandre",
                                           repertoire_1_length: "60 minutes",
                                           repertoire_2: "Russian moods",
                                           repertoire_2_length: "60 minutes",
-                                          is_musician: true}
-
+                                          is_musician: true,
 )
 
-noemie_raymond_friset = User.create!({first_name: "Noémie",
+noemie_raymond_friset = User.create!(first_name: "Noémie",
                                     last_name: "Raymond-Friset",
                                     email: "no_4cello@gmail.com",
                                     password:  "password",
@@ -101,10 +167,10 @@ noemie_raymond_friset = User.create!({first_name: "Noémie",
                                     repertoire_1_length: "60 minutes",
                                     repertoire_2: "Cello Virtuoso",
                                     repertoire_2_length: "50 minutes",
-                                    is_musician: true}
+                                    is_musician: true,
 )
 
-quatuor_despax = User.create!({first_name: "Quatuor",
+quatuor_despax = User.create!(first_name: "Quatuor",
                               last_name: "Despax",
                               email: "quatuordespax@yahoo.fr",
                               password: "password",
@@ -129,8 +195,7 @@ quatuor_despax = User.create!({first_name: "Quatuor",
                               repertoire_1_length: "70 minutes",
                               repertoire_2: "Shostakovich à l’honneur!",
                               repertoire_2_length: "65 minutes",
-                              is_musician: true}
-
+                              is_musician: true,
 )
 
 carlos_avila = User.create!(first_name: "Carlos",
@@ -153,33 +218,173 @@ carlos_avila = User.create!(first_name: "Carlos",
                             repertoire_1_length: "70 minutes",
                             repertoire_2: "The world of Prokofiev",
                             repertoire_2_length: "70 minutes",
-                            is_musician: true
-
+                            is_musician: true,
 )
 
-trio_de_l_ile = User.create!(first_name: "Trio",
-                            last_name: "de l’Île",
-                            email: "triodelile@gmail.com",
+juan_miguel_hernandez = User.create!(first_name: "Juan-Miguel",
+                            last_name: "Hernandez",
+                            email: "jmh@jmhernandez.com",
                             password:  "password",
-                            phone_number: "433-398-1599",
-                            address: "67-8999 rue Faust, Montreal, Canada, F6G7H8",
-                            photo: "https://static.wixstatic.com/media/a5c9d2_b0210fa9186644efaa526c5db64e2b53~mv2_d_5616_3744_s_4_2.jpg/v1/fill/w_1569,h_1046,al_c,q_90,usm_0.66_1.00_0.01/a5c9d2_b0210fa9186644efaa526c5db64e2b53~mv2_d_5616_3744_s_4_2.webp",
-                            video: "https://www.youtube.com/embed/n4oluO4Oov0",
-                            bio: "Tous trois anciens boursiers de la Fondation de soutien aux arts de Laval (FSAL), les membres de ce trio, formé en 2015 profitent de leur résidence à la série Les Déjeuners croissants-musique de la Maison des Arts de Laval pour promouvoir l’œuvre philanthropique de la Fondation. Élus ambassadeurs de la FSAL, ces musiciens dont la rigoureuse formation classique se reconnaît dans la justesse et le sérieux de leurs interprétations se produisent avec brio un peu partout sur les scènes du pays. Les concerts du trio de l’Île se démarquent par leur qualité et leur accessibilité auprès d’un public varié. Le trio est régulièrement invité à jouer dans la série « Matinées en Musique » de l’orchestre symphonique de Trois-Rivières et lors des concerts de professeurs de la faculté de musique de l’Université de Montréal.",
-                            price: "900",
-                            ensemble_type: "trio",
-                            instruments: "piano/cello/violin",
-                            facebook: "https://www.facebook.com/triodelile",
-                            youtube: "https://www.youtube.com/channel/UCKJUR6e0PSXb_L3Q5YnXu3Q",
-                            website: "http://www.triodelile.com/",
-                            instagram: "none",
-                            repertoire_1: "Paris Postcard",
+                            phone_number: "433-398-1555",
+                            address: "67-8989 rue Gluck, Montreal, Canada, G7H8I9",
+                            photo: "https://images.squarespace-cdn.com/content/v1/547f740fe4b030e4805432d4/1472070261818-UVXNZXSISTDAI5VPN18U/ke17ZwdGBToddI8pDm48kFWxnDtCdRm2WA9rXcwtIYR7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UcTSrQkGwCGRqSxozz07hWZrYGYYH8sg4qn8Lpf9k1pYMHPsat2_S1jaQY3SwdyaXg/JMH_LiveSepia_1500pxw.jpg?format=1500w",
+                            video: "https://www.youtube.com/embed/9zk7k_PRfy8&feature=emb_logo",
+                            bio: "An artist defined by the critics as '…tender, lyrical, loaded with personality' -Atlanta Journal Constitution, French-Canadian violist Juan-Miguel Hernandez is also recognized for drawing '...the sweetest, most sonorous tone...' -Washington Post. In September 2009, Juan-Miguel won the first Prize at the 16th International Johannes Brahms Competition in Austria, adding to other top prizes won at the National Canadian Music Competition, and the 9th National Sphinx Competition in 2006. As a featured guest soloist, Juan-Miguel has appeared with the Atlanta, Seattle, Colorado Symphonies, the Rochester Philharmonic and the Chicago Sinfonietta. In 2010, he was recognized with the medal of honor from the National Assembly of Quebec for his significant International accomplishments. A dedicated chamber musician, Juan-Miguel was a member of the legendary Fine Arts Quartet and original member of the Harlem Quartet (2006-2012) as well as a founder of  'Trio Virado' -Flute, Viola, Guitar. His musicianship has led to a wide array of collaborations with artists such as Itzhak Perlman, Lynn Harrell, Kim Kashkashian and Gerard Caussé as well as Chick Corea, Gary Burton and Stanley Clark. Juan-Miguel is Professor of Viola at the Royal Academy of Music in London.",
+                            price: "1000",
+                            ensemble_type: "duo",
+                            instruments: "viola/piano",
+                            facebook: "none",
+                            youtube: "https://www.youtube.com/user/SideShowMig",
+                            website: "jmhernandez.com/",
+                            instagram: "jmh_violist",
+                            repertoire_1: "Be for Brahms",
                             repertoire_1_length: "60 minutes",
-                            repertoire_2: "When female composers shines!",
-                            repertoire_2_length: "70 minutes",
-                            is_musician: true
-
+                            repertoire_2: "From my heart...",
+                            repertoire_2_length: "50 minutes",
+                            is_musician: true,
 )
+
+suzanne_taffot = User.create!(first_name: "Suzanne",
+                            last_name: "Taffot",
+                            email: "suzysoprano@gmail.com",
+                            password:  "password",
+                            phone_number: "433-398-1444",
+                            address: "67-8989 rue Hahn, Montreal, Canada, H8I9J0",
+                            photo: "https://static.wixstatic.com/media/23c3b5_26d1e8720457483d8348e3e66b145c74~mv2.jpg/v1/fill/w_620,h_992,al_c,q_85,usm_0.66_1.00_0.01/new%20pic%20Suzanne%20Taffot%20.webp",
+                            video: "https://www.youtube.com/embed/bbHVaeTefOA",
+                            bio: "Suzanne Taffot se distingue par son riche timbre de soprano lyrique et sa touchante interprétation. Elle fera son grand début en octobre prochain sous la direction du renommé Maestro Yannick Nézet-Séguin et son Orchestre Métropolitain. Elle est la Mimi incarnée  ( La Bohème de Puccini) qu'elle a tenu avec immense succès, en Mars 2019,  au Gärtnerplaztheater en Allemagne et qu'elle interprétera avec le FestivalOpéra des Grandes Laurentides en juillet 2021 sous la direction de Maestro Alain Trudel et son Orchestre Symphonique de Laval. Sur scène, on a récemment pu la voir et l’entendre au gala de la prestigieuse soirée lyrique opéra Montréal-Moscou avec l’orchestre de l’ensemble sinfonia sous la direction de Maestro Louis Lavigueur où elle a été désignée par la critique comme étant « une voix à suivre ». On a également pu l’entendre au gala des Jeunes Ambassadeurs Lyriques avec l’Orchestre philharmonique des musiciens de Montréal ; dans le rôle de Fiodiligi (Cosi fan tutte) avec la compagnie OperAmor; au concert « jeunes talents » avec les Chorégies d’Orange en France, dans le rôle titre de Mimi (La Bohème) avec la compagnie OperAmor; dans le rôle de Pamina (Die Zauberflote) avec le camp musical Saguenay Saint Jean. Nommée Jeune espoir lyrique Québécoise 2017-2018, Suzanne Taffot, originaire du Cameroun, est une jeune soprano qui se distingue par son riche timbre de soprano lyrique et sa touchante interprétation. Trois fois lauréate des Jeunes Ambassadeurs Lyriques 2014, 2015 et 2017, elle a remporté une quinzaine de bourses et prix dont la bourse lyrique Québec-Bavière pour effectuer un stage de perfectionnement au Junge Ensemble du Staastoper à Munich, une bourse pour effectuer des auditions en Europe (Pays-Bas, France, Italie, Allemagne) auprès des directeurs de compagnies d’opéra, ainsi qu’une bourse lyrique Tchèque et Slovaque pour un concert avec l’Orchestre Philharmonique de Kosice en Slovaquie en tant que soliste. Elle a décroché son diplôme avec la mention « excellent » à l’unanimité lors de son examen final de maîtrise à l’Université. Elle est reconnue pour son timbre unique, riche et coloré. Sa présence et son aisance sur scène ainsi que ses interprétations profondes, émouvantes et authentiques font de Suzanne Taffot une artiste lyrique à l’avenir certain.",
+                            price: "1000",
+                            ensemble_type: "duo",
+                            instruments: "voice(soprano)/piano",
+                            facebook: "none",
+                            youtube: "https://www.youtube.com/user/taffotsuzy",
+                            website: "http://www.suzytaffot.com",
+                            instagram: "https://www.instagram.com/explore/tags/suzannetaffot/",
+                            repertoire_1: "Famous italian arias",
+                            repertoire_1_length: "60 minutes",
+                            repertoire_2: "Summertime",
+                            repertoire_2_length: "50 minutes",
+                            is_musician: true,
+)
+
+duo_nox = User.create!(first_name: "Duo",
+                            last_name: "Nox",
+                            email: "uo.nox514@gmail.comm",
+                            password:  "password",
+                            phone_number: "433-398-1333",
+                            address: "67-8989 rue Berg, Montreal, Canada, I9J0K1",
+                            photo: "https://scontent.fymy1-1.fna.fbcdn.net/v/t1.0-9/83452733_467604993932026_2189316307340492800_n.jpg?_nc_cat=104&_nc_sid=09cbfe&_nc_ohc=irFAzdXVDegAX8H1ARn&_nc_oc=AQnZwKieODo1VI2ezPSzuchWoNHSLyyvxh0AnK-Q9d8VZSGFEpUcwKcPJGkCRHBfG_c&_nc_ht=scontent.fymy1-1.fna&oh=6a3f25cc0c20fda4c87f19ec25ea252c&oe=5F767ACC",
+                            video: "https://www.youtube.com/embed/bbHVaeTefOA",
+                            bio: "Le duo Nox est formé de la soprano Agnès Ménard et du pianiste Basil Vandervort-Charbonneau. Ils se produisent dans plusieurs récitals de Lied, mélodies et songs.",
+                            price: "800",
+                            ensemble_type: "duo",
+                            instruments: "voix(soprano)/piano",
+                            facebook: "https://www.facebook.com/Duo-Nox-Piano-Voix-253927955299732/",
+                            youtube: "none",
+                            website: "none",
+                            instagram: "https://www.instagram.com/explore/tags/duonox/",
+                            repertoire_1: "Paris à la Belle Époque",
+                            repertoire_1_length: "60 minutes",
+                            repertoire_2: "Eternal Vienne",
+                            repertoire_2_length: "50 minutes",
+                            is_musician: true,
+)
+
+quatuor_cobalt = User.create!(first_name: "Quatuor",
+                            last_name: "Cobalt",
+                            email: "info@quatuorcobalt.com",
+                            password:  "password",
+                            phone_number: "433-398-1222",
+                            address: "67-8989 rue Ravel, Montreal, Canada, J0K1L2",
+                            photo: "https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.lienmultimedia.com%2FIMG%2Farton75726.jpg&imgrefurl=http%3A%2F%2Fwww.lienmultimedia.com%2Fspip.php%3Farticle75726&tbnid=7kgO7gEEYZ2BPM&vet=12ahUKEwj2nbD1_MrrAhUPb80KHT6RCZ8QMygDegUIARCYAQ..i&docid=XyvZyfDulFXjWM&w=468&h=263&q=quatuor%20cobalt&ved=2ahUKEwj2nbD1_MrrAhUPb80KHT6RCZ8QMygDegUIARCYAQ",
+                            video: "https://www.youtube.com/embed/vygkQ_PAJ5g&feature=emb_logo",
+                            bio: "Ensemble émergent, le Quatuor Cobalt se distingue par son approche musicale éclectique et moderne, explorant avec autant d’enthousiasme la musique ancienne sur instrument d’époque que les créations contemporaines. Musiciens engagés, les membres du quatuor se dédient à rendre la musique toujours plus accessible à un large public, défiant les barrières stylistiques et sociales. Mis en avant dès ses débuts, l’ensemble est quatuor collaborateur à l’Académie internationale de musique et de danse du Domaine Forget depuis 2018. De plus en plus actif, le quatuor a effectué sa première tournée française en 2019 et multiplie les collaborations avec des artistes de renommée internationale tels que Laura Andriani, Yukari Cousineau, Jutta Puchhammer, Silvia Mandolini et Yegor Dyachkov. Lors de sa première performance en 2017, l’ensemble est remarqué par la violoniste Laura Andriani (Quatuor Alcan), qui pousse alors l’ensemble à entreprendre une démarche de redécouverte du répertoire avec archets d’époque et l’utilisation de cordes en boyau. En collaboration avec le compositeur Francis Battah et le claveciniste Steve Bergeron, cette recherche de sonorité propre pousse le quatuor à développer le projet d’un spectacle mêlant la musique du 18ème au 21ème siècle à une composition spécialement commandée pour l’occasion, le tout sur cordes en boyau. Engagé dans la diffusion du répertoire d’aujourd’hui, l’ensemble met à l’honneur la musique contemporaine avec plusieurs collaborations et créations de compositeurs québécois. Le quatuor a notamment interprété en première mondiale le Quartetto no.2 de Francis Ubertelli au Centre de musique canadienne de Toronto et le sextuor Neige de François-Hugues Leclair lors de la création américaine de l’œuvre à la Chapelle Historique du Bon-Pasteur à Montréal. Proche des compositeurs de la nouvelle génération, le quatuor est fier de contribuer à leur rayonnement en participant à la création de nombreuses oeuvres, dont Quatre miniatures pour basse électrique et quatuor à cordes (...et quelques tambours) de Maggie Ayotte,  gravées sur l’album « Déductions » du bassiste Rémi-Jean Leblanc. Désireux de transmettre sa passion auprès des jeunes générations, le quatuor a collaboré avec la Fondation Musique de l’École secondaire Saint-Luc pour offrir des concerts pédagogiques aux élèves afin d’initier le public de demain. Actifs à l’international, plusieurs de ses membres participent au projet « Ambassadeurs OM » qui les a conduits à enseigner en Haïti. Le Quatuor Cobalt a été formé à l’Université de Montréal. Il a reçu l’enseignement de la pédagogue Annick Roussin et de Yegor Dyachkov avant d’entrer dans la classe de quatuor à cordes de Laura Andriani.",
+                            price: "1200",
+                            ensemble_type: "quatuor",
+                            instruments: "violin(2)/viola/cello",
+                            facebook: "https://www.facebook.com/QuatuorCobalt/",
+                            youtube: "https://www.youtube.com/channel/UCMt1A3VjeA-MLPX-1hXjngg",
+                            website: "https://www.quatuorcobalt.com/",
+                            instagram: "https://www.instagram.com/quatuorcobalt/",
+                            repertoire_1: "Takes 4 to Tango!",
+                            repertoire_1_length: "60 minutes",
+                            repertoire_2: "Quatuor Cobalt favorites! ",
+                            repertoire_2_length: "70 minutes",
+                            is_musician: true,
+)
+
+julien_leblanc = User.create!(first_name: "Julien",
+                            last_name: "Leblanc",
+                            email: "julienleblanc.piano@gmail.com",
+                            password:  "password",
+                            phone_number: "433-398-1111",
+                            address: "67-8989 rue Fauré, Montreal, Canada, J0K1L2",
+                            photo: "https://www.google.com/imgres?imgurl=https%3A%2F%2Farts.uottawa.ca%2Fmusic%2Fsites%2Farts.uottawa.ca.music%2Ffiles%2Fjulian_leblanc.jpg&imgrefurl=https%3A%2F%2Farts.uottawa.ca%2Fmusic%2Fpeople%2Fleblanc-julien&tbnid=1kqg-52fBKLujM&vet=12ahUKEwiuj7nZhMvrAhUNyawKHQCdBo0QMygBegUIARCQAQ..i&docid=Y7hy4hBdf5p_nM&w=867&h=867&q=julien%20leblanc%20piano&ved=2ahUKEwiuj7nZhMvrAhUNyawKHQCdBo0QMygBegUIARCQAQ",
+                            video: "https://www.youtube.com/embed/DJ8jmkDhlXk",
+                            bio: "A virtuoso whose enthusiasm is genuinely contagious, Canadian pianist Julien LeBlanc is renowned for his great musical sensibility and his talent as a communicator. Based in Montreal, Julien is a well sought-after soloist, chamber player and accompanist.  In 2015, he launched his first solo album “Mélancolies” which is dedicated a program of works by Dutilleux, Franck and Poulenc. The album was really well received: “LeBlanc proved a more than able interpreter, playing with warmth, clarity and flowing lyricism, all with a natural rhythmic sense. »  (Ruthland Herald) . « He handles every twist and turn with brio, his phrasing is analytical, and his brilliant technique puts him in a class of his own….His interpretation is always true, played with care, and packed with warmth. » (La Scena Musicale) He has also recorded two albums as a member of Trio Arkaède. Since 2012, Julien has been acting as co-artistic director of the summer concert series Barachois Summer Music in New-Brunswick. He has taken part in many concert tours across Canada with violinist Marc Djokic as well as soprano Miriam Khalil and Mezzo Lauren Segal for Jeunesses Musicales du Canada and Debut Atlantic. He is a part-time teacher at the University of Ottawa and works as a vocal coach and accompanist both at McGill University and Université de Montréal. He has given master classes in several universities across Canada and his frequently asked to sit on juries for music competitions. Julien LeBlanc is presently acting as Chair of the Board of Directors for Debut Atlantic.",
+                            price: "750",
+                            ensemble_type: "solo",
+                            instruments: "piano",
+                            facebook: "https://www.facebook.com/Julien-LeBlanc-1945033372242462",
+                            youtube: "https://www.youtube.com/results?search_query=julien+leblanc+piano",
+                            website: "https://en.julienleblanc.com/",
+                            instagram: "https://www.instagram.com/julien.leblanc.pianiste/",
+                            repertoire_1: "Arabesques et Pantomimes",
+                            repertoire_1_length: "60 minutes",
+                            repertoire_2: "Les Romantiques",
+                            repertoire_2_length: "60 minutes",
+                            is_musician: true,
+)
+
+
+puts "musicians created"
+puts "creating reviews"
+
+#here are the reviews of our 7 customers:
+aaron_sherbatsky = Review.create!(rating: 5,
+                        content: "Fabulous musician!! My guests were very impressed!",
+                        customer_id: 2,
+                        musician_id: 10,
+)
+
+bedros_babadjanian = Review.create!(rating: 5,
+                      content: "This moment of music changed my life! What an amazing musician!",
+                      customer_id: 3,
+                      musician_id: 10,
+)
+
+charles_péloquin = Review.create!(rating: 5,
+                          content: "I appreciated very much this pianist; we all had a wonderful moment. I strongly recommend him!",
+                          customer_id: 4,
+                          musician_id: 10,
+)
+
+david_bordeleau = Review.create!(rating: 5,
+                        content: "Wow wow wow!! I hired this pianist as a surprise for my wife's birthday! Now I'm husband of the year!! What an extraordinary musician!!!!",
+                        customer_id: 5,
+                        musician_id: 10,
+)
+
+edward_longshire = Review.create!(rating: 3,
+                        content: "It was good, but I've seen better...",
+                        customer_id: 6,
+                        musician_id: 9,
+)
+
+edwidge_seinfeld = Review.create!(rating: 2,
+                          content: "Arrived late. I was not impressed..",
+                          customer_id: 7,
+                          musician_id: 9,
+)
+
+fanny_beauregard = Review.create!(rating: 4,
+                        content: "Good performance, I guess..",
+                        customer_id: 8,
+                        musician_id: 9,
+)
+
+puts "reviews created"
+
 
 Booking.create!(customer: nancy_shapiro,
                 musician: boran_zaza,
@@ -187,32 +392,7 @@ Booking.create!(customer: nancy_shapiro,
                 repertoire_number: 1,
                 status: "pending",
                 location:"1000 The Boulevard, Westmount, Canada, B9C9D9",
-                comments:"my backyard okay?",
+                comments:"Are you allergic to cats?",
 )
 
-#
 
-
-
-
-# require "json"
-# require "rest-client"
-
-# TOP_STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json"
-
-# def story_url(id)
-#   "https://hacker-news.firebaseio.com/v0/item/#{id}.json"
-# end
-
-# post_ids = JSON.parse(RestClient.get(TOP_STORIES_URL))
-
-# post_ids.take(10).each do |id|
-#   hacker_news_post = JSON.parse(RestClient.get(story_url(id)))
-#   post = Post.new(
-#     title: hacker_news_post["title"],
-#     url: hacker_news_post["url"],
-#     votes: hacker_news_post["score"]
-#   )
-#   post.save
-#   puts "[#{post.votes}] #{post.title} - #{post.url}"
-# end
