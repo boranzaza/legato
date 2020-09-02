@@ -2,7 +2,8 @@
 </button>
 <div class="form-style">
   <h1 style="text-align: center;"> UPDATE PROFILE </h1>
-  <%= simple_form_for @user, url: user_path(current_user)  do |f| %>
+  <br>
+  <%= simple_form_for @user, url: user_path(current_user), class: "form-align"  do |f| %>
     <%= f.error_notification %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
@@ -10,6 +11,6 @@
     <%= f.input :password, input_html: { autocomplete: 'current-password' } %>
     <%= f.input :phone_number %>
     <%= f.input :address %>
-    <%= f.submit "Update my profile" , class: "btn-primary"%>
+    <%= f.submit "Update my profile" , class: "btn-primary btn-center" %>
   <% end %>
 </div>

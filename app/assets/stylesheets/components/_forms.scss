@@ -6,3 +6,9 @@
   font-size: 18px;
   line-height: 15px;
 }
+
+.form-align {
+  // parent = relative
+  // child = absolute
+  position: relative;
+}
