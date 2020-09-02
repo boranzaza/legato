@@ -1,0 +1,26 @@
+<h1>My inbox</h1>
+<%= link_to "< Home", root_path %>
+<p>Find me in app/views/chatrooms/index.html.erb</p>
+
+<!-- Chatroom controller already filters for the users own chatrooms -->
+<% @chatrooms.each do |chatroom| %>
+  <% if current_user.is_musician %>
+    <div class="chatroom">
+      <p>Chatting with <strong><%= User.find(chatroom.customer_id).full_name %></strong></p>
+      <p><%= chatroom.messages.size %> message(s)</p>
+      <p>Last message: <%= time_ago_in_words(chatroom.messages.last.created_at) %> ago</p>
+      <br>
+      <%= link_to "Go to conversation", chatroom_path(chatroom) %>
+    </div>
+  <% else %>
+    <div class="chatroom">
+      <p>Chatting with <strong><%= User.find(chatroom.musician_id).full_name %></strong></p>
+      <p><%= chatroom.messages.size %> message(s)</p>
+      <small>Last message: <%= time_ago_in_words(chatroom.messages.last.created_at) %> ago</small>
+      <br>
+      <%= link_to "Go to conversation", chatroom_path(chatroom) %>
+    </div>
+  <% end %>
+
+<% end %>
+

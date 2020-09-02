@@ -1,5 +1,6 @@
 <div class="review-card">
-    <h4>by <strong><%= User.find(review.customer_id).full_name %></strong></h4>
-    <h4>Rating: <%= review.rating %></h4>
-    <p><%= review.content %></p>
+    <p>Review by <strong><%= User.find(review.customer_id).full_name %></strong></p>
+    <p><strong>Rating: </strong> <%= review.rating %></p>
+    <p><strong>Comment: </strong> <%= review.content %></p>
+    <hr style="color: #0D253D">
 </div>

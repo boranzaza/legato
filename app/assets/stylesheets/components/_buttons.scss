@@ -21,6 +21,13 @@
   // margin-right: 336px;
   // margin-top: 22px;
   // text-capitalize:"true";
+   a:hover {
+    color: #0D253D;
+    text-decoration: none;
+  }
+  a {
+    color: #fff;
+  }
 }
 
 .btn-primary:hover{
@@ -51,6 +58,13 @@
   // margin-right: 336px;
   // margin-top: 22px;
   // text-capitalize:"true";
+   a:hover {
+    color: #0D253D;
+    text-decoration: none;
+  }
+  a {
+    color: #fff;
+  }
 }
 
 .btn-primary-ok:hover{
@@ -61,22 +75,22 @@
 
 .btn-danger {
   background-color: #84161E;
-  // color: white;
+  color: white;
   border: none;
-  // padding: 16px 26px 40px;
-  // border-radius: 8px;
-  // font-weight: bold;
-  // opacity: 1;
-  // width: auto;
-  // height: 40px;
-  // text-decoration: none;
-  // text-align: center;
-  // vertical-align: middle;
-  // cursor: pointer;
+  padding: 16px 26px 40px;
+  border-radius: 8px;
+  font-weight: bold;
+  opacity: 1;
+  width: auto;
+  height: 40px;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
   transition: background-color 0.5s;
-  // overflow: hidden;
-  // margin-top: 20px;
-  // text-transform: uppercase;
+  overflow: hidden;
+  margin-top: 20px;
+  text-transform: uppercase;
 }
 
 .btn-danger:hover{
@@ -112,61 +126,71 @@
    color: #0D253D;
 }
 
-// .btn-navy-blue:after {
-//     content: "";
-//     background: #;
-//     display: block;
-//     position: absolute;
-//     padding-top: 300%;
-//     padding-left: 350%;
-//     // margin-left: -20px !important;
-//     // margin-top: -120%;
-//     opacity: 0;
-// }
-// .btn-navy-blue:active:after {
-//     padding: 0;
-//     margin: 0;
-//     opacity: 1;
-// }
-// @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700italic);
+.btn_home{
+  background-color: white;
+  color: #846000;
+  border: none;
+  font-weight: 400;
+  opacity: 1;
+  text-decoration: none;
+  width: auto;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  overflow: hidden;
+  margin-top: 20px;
+  text-transform: uppercase;
 
-// *{margin: 0px; padding: 0px}
+  a:hover {
+    color: #846000;
+  }
+  a {
+    color: #846000;
+  }
+}
 
-// body{
-//   background:#2;
-//   font-family: 'Open Sans', sans-serif;
-// }
+.btn-cancel {
+  background-color: white;
+  color: #84161E;
+  border: none;
+  padding: 16px 26px 40px;
+  border-radius: 8px;
+  font-weight: 400;
+  opacity: 1;
+  width: auto;
+  height: 40px;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  overflow: hidden;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
 
-// h1, button{
-//   color:#;
-//   text-align: center;
-//   padding: 20px;
-// }
+.btn-cancel:hover{
+   text-decoration: underline;
+}
 
-// p{
-//   color:#;
-//   text-align: center;
-//   padding-top: 500px;
-//   font-size: 10px;
-// }
+.btn-cancel-booking {
+  background-color: #84161E;
+  color: white;
+  border: none;
+  padding: 5px 40px;
+  border-radius: 8px;
+  font-weight: bold;
+  opacity: 1;
+  width: auto;
+  height: auto;
+  transition: background-color 0.5s;
+  overflow: hidden;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
 
-// a{
-//    text-decoration:none;
-//    color:#;
-// }
-
-// a:hover{
-//    color:#;
-// }
-
-// .main{
-//   width: 100%;
-// }
-
-// .sub-main{
-//   width: 30%;
-//   margin:22px;
-//   float: left;
-// }
-
+.btn-cancel-booking:hover{
+   background:#fff;
+   box-shadow:0px 1px 1px 1px rgba(132, 96, 0, 0.2);
+   color: #84161E;
+}
 

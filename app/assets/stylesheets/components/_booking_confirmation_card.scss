@@ -2,7 +2,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  padding: 40px;
+  padding: 20px;
   border-radius: 8px;
   align-items: center;
   color: #0D253D;
@@ -12,5 +12,23 @@
 }
 
 .booking-card .booking-card-infos {
+  padding: 16px;
+}
+
+.booking-requests-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 40px;
+  border-radius: 8px;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #0D253D;
+  p {
+    margin-bottom: 4px;
+  }
+}
+
+.booking-requests-card .booking-requests-card-infos {
   padding: 16px;
 }

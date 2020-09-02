@@ -1,5 +1,7 @@
+<button type="button" class="btn_home" style="padding-left: 30px; "> <%= link_to "< Home", root_path %>
+    </button>
 <div class="container">
-  <%= link_to "< Back to musicians", musicians_path %>
+
   <br>
   <br>
   <br>
@@ -7,62 +9,75 @@
   <!-- <p>Find me in app/views/musicians/show.html.erb</p> -->
 
  <div class="d-flex">
-    <%= image_tag(@musician.photo, class: "avatar-musician-show") %>
+  <%= image_tag(@musician.photo, class: "avatar-musician-show") %>
     <div>
-      <h2><%= @musician.first_name %> <%= @musician.last_name %></h2>
-      <%= link_to "Website", @musician.website %>
-
-      <p><strong>Ensemble type: </strong><%= @musician.ensemble_type %></p>
-      <p><strong>Instruments: </strong><%= @musician.instruments %></p>
-      <p><strong>Repertoire 1: </strong><%= @musician.repertoire_1 %> | <%= @musician.repertoire_1_length %> minutes</p>
-      <p><strong>Repertoire 2: </strong><%= @musician.repertoire_2 %> | <%= @musician.repertoire_2_length %> minutes</p>
+      <h2 style="color: #846000; font-weight: 700"><%= @musician.full_name.upcase %></h2>
+        <%= link_to "Website", @musician.website, class: "musician-website" %>
+        <br>
+        <br>
+        <p style="margin-bottom: 4px; color: #0D253D"><strong>Ensemble type: </strong><%= @musician.ensemble_type.capitalize %></p>
+        <p style="margin-bottom: 4px; color: #0D253D"><strong>Instruments: </strong><%= @musician.instruments.capitalize %></p>
+        <p style="margin-bottom: 4px; color: #0D253D"><strong>Repertoire 1: </strong><%= @musician.repertoire_1 %> | <%= @musician.repertoire_1_length %> minutes</p>
+        <p style="margin-bottom: 4px; color: #0D253D"><strong>Repertoire 2: </strong><%= @musician.repertoire_2 %> | <%= @musician.repertoire_2_length %> minutes</p>
     </div>
-    <div>
-      <span><h3>$<%= @musician.price %></h3><p> per concert</p></span>
+    <div style="margin-left: 30px; color: #0D253D">
+      <span><h3>$<%= @musician.price %></h3><p style="margin-bottom: 4px"> per concert</p></span>
     </div>
   </div>
-  <br>
 
-    <%= link_to "Book this Artist", new_user_booking_path(@musician), class: "btn btn-primary" %>
+  <br>
+  <div class="row justify-content-center">
+    <%= link_to "BOOK THIS ARTIST", new_user_booking_path(@musician), class: "btn btn-primary" %>
+  </div>
   <br>
   <br>
-  <h3>About</h3>
-    <p><%= @musician.bio %></p>
+  <h4 style="color: #84161E">BIOGRAPHY</h4>
+    <p align="justify" style="color: #0D253D"><%= @musician.bio %></p>
 
+  <div class="row justify-content-center" style="font-size: 50px">
+    <div class="social-media-icons">
+      <%= link_to @musician.facebook do %>
+        <i class="fab fa-facebook" style="color: #846000"></i>
+      <% end %>
+      <%= link_to @musician.youtube do %>
+        <i class="fab fa-youtube" style="color: #846000"></i>
+      <% end %>
+      <%= link_to @musician.instagram do %>
+        <i class="fab fa-instagram" style="color: #846000"></i>
+      <% end %>
+    </div>
+  </div>
 
-  <%= link_to "Video", @musician.video %>
+  <div class="row justify-content-center">
+    <iframe class="musician-video" src="<%= @musician.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
 
 <!--   <h3>Contact</h3>
     <p>Email: <%= @musician.email %></p>
     <p>Phone number: <%= @musician.phone_number %></p> -->
 
-  <h3>On Social Media</h3>
-  <div class="links-to-socials" style="display: inline; color: #69748C" >
-    <%= link_to @musician.facebook do %>
-      <i class="fab fa-facebook"></i>
-    <% end %>
-    <%= link_to @musician.youtube do %>
-      <i class="fab fa-youtube"></i>
-    <% end %>
-    <%= link_to @musician.instagram do %>
-      <i class="fab fa-instagram"></i>
-    <% end %>
-  </div>
+
   <br>
-  <%= link_to "Browse Musicians", musicians_path %>
+    <div class="row justify-content-center">
+      <%= link_to "Leave a review", new_user_review_path(@musician), class: "btn btn-primary" %>
+    </div>
+    <br>
+    <br>
 
-  <%= link_to "Book this Artist", new_user_booking_path(@musician) %>
-  <%= link_to "Leave a review", new_user_review_path(@musician) %>
+  <div class="d-flex">
+    <p style="margin-right: 180px; font-size: 25px; font-weight: 700; color: #0D253D">REVIEWS</p>
 
-  <h3>Average rating</h3>
+    <p style="margin-left: 170px ; color: #0D253D"><strong>Average rating: </strong></p>
     <% if @musician.average_rating.class == String %>
-      <p>No reviews yet</p>
+      <p style="color: #0D253D; margin-left: 10px"> No reviews yet</p>
     <% else %>
       <%= render 'review_stars', { musician: @musician } %>
     <% end %>
+  </div>
+<hr style="margin-top: 5px; border-top: 2px solid  #0D253D">
 
-  <h3>Reviews</h3>
-  <div class="all-reviews">
+  <div class="all-reviews" style="color: #0D253D">
     <% reviews = Review.where(musician_id: @musician.id) %>
     <% reviews.each do |review| %>
       <%= render 'review_card', { review: review } %>

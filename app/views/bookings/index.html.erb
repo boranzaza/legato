@@ -1,47 +1,70 @@
+<button type="button" class="btn_home" style="padding-left: 30px; "> <%= link_to "< Home", root_path %>
+    </button>
+<br>
+<br>
+  <div class="row justify-content-center">
+    <h1>MY BOOKING REQUESTS</h1>
+  </div>
+  <br>
+  <br>
+
 <div class="container">
-<%= link_to "< Home", root_path %>
-<br>
-<br>
-<h1>My Bookings</h1>
-<br>
-<br>
 
 <!-- Who booked me today? -->
 
 <div>
   <% if current_user.is_musician %>
     <% @bookings_musician.each do |booking| %>
-      <p>Booking Request for: <%= booking.musician.full_name %></p>
-      <p>Repertoire: <%= booking.repertoire_name %> | <%= booking.repertoire_length %> minutes </p>
-      <p>Requested by: <%= booking.customer.full_name %></p>
-      <p>Date and time: <%= booking.date_time.strftime('%F at: %H:%M sharp!') %></p>
-      <p>Address: <%= booking.location %></p>
-      <p>Phone: <%= booking.customer.phone_number %></p>
-      <p>Comments: <%= booking.comments %></p>
-      <p><%= link_to 'Accept', approve_path(id: booking.id), method: :patch %></p>
-      <p> <%= link_to 'Decline', reject_path(id: booking.id), method: :patch %></p>
+      <div class="booking-requests-card">
+        <p><strong> Booking Request for:</strong> <%= booking.musician.full_name %></p>
+        <p><strong>Repertoire:</strong> <%= booking.repertoire_name %> | <%= booking.repertoire_length %> minutes </p>
+        <p><strong>Requested by:</strong> <%= booking.customer.full_name %></p>
+        <p><strong>Date and time: </strong><%= booking.date_time.strftime('%F at: %H:%M sharp!') %></p>
+        <p><strong>Address: </strong><%= booking.location %></p>
+        <p><strong>Phone:</strong> <%= booking.customer.phone_number %></p>
+        <p><strong>Comments:</strong> <%= booking.comments %></p>
+        <div class="row justify-content-center">
+          <div class="d-flex">
+            <p style="margin-right: 20px"><%= link_to 'Accept', approve_path(id: booking.id), method: :patch, class: "btn btn-primary"%></p>
+            <p style="margin-left: 20px"><%= link_to 'Decline', reject_path(id: booking.id), method: :patch, class: "btn btn-danger" %></p>
+          </div>
+        </div>
+      </div>
     <% end %>
   <% else %>
     <% @bookings_customer.each do |booking| %>
-      <p>Booking Request for: <%= booking.musician.full_name %></p>
-      <p>Repertoire: <%= booking.repertoire_name %> | <%= booking.repertoire_length %> </p>
-      <p>Date and time: <%= booking.date_time.strftime('%F at: %H:%M sharp!') %></p>
-      <p>Address: <%= booking.location %></p>
-      <p>Comments: <%= booking.comments %></p>
-      <p>Booking status: </p>
-       <% if booking.status == true %><p>Accepted</p>
-        <% elsif booking.status == false %><p>Respectfully Declined</p>
-        <% else %><p>Pending</p>
-        <% end %>
-      <p>Price: <%= User.find(booking.musician_id).price %></p>
-      <p> <%= link_to "CANCEL BOOKING", booking_path(booking), method: :delete, class: "btn btn-danger" %> </p>  <!-- add here the destroy method -->
-<br>
-<br>
-      <% end %>
-  <% end  %>
+     <div class="booking-requests-card">
+       <div class="d-flex">
+          <%= image_tag(booking.musician.photo, class: "avatar_booking") %>
+          <div>
+            <p><strong>Booking Request for: </strong><%= booking.musician.full_name %></p>
+            <p><strong>Ensemble type: </strong><%= booking.musician.ensemble_type.capitalize %></p>
+            <p><strong>Instruments: </strong><%= booking.musician.instruments.capitalize %></p>
+            <p><strong>Repertoire: </strong><%= booking.repertoire_name %> | <%= booking.repertoire_length %> </p>
+          </div>
+        </div>
+        <br>
+            <p><strong>Date and time: </strong><%= booking.date_time.strftime('%F at: %H:%M sharp!') %></p>
+            <p><strong>Address: </strong><%= booking.location %></p>
+            <p><strong>Comments: </strong><%= booking.comments %></p>
+          <div class="d-flex">
+            <div>
+              <p><strong>Booking status:</strong>
+                <% if booking.status == true %>
+                  Accepted</p>
+                <% elsif booking.status == false %>
+                  Respectfully Declined</p>
+                <% else %>
+                  Pending</p>
+                <% end %>
+                <p><strong>Price: </strong><%= User.find(booking.musician_id).price %></p>
+              </div>
+            <div class="row justify-content-center">
+              <p style="margin-left: 220px"> <%= link_to "CANCEL BOOKING", booking_path(booking), method: :delete, class: "btn btn-cancel-booking" %> </p>
+            </div> <!-- add here the destroy method -->
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>
-<br>
-<%= link_to "Back to Homepage", root_path %>
-</div>
-
 
