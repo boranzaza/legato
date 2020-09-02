@@ -118,12 +118,20 @@
   text-transform: uppercase;
   font-size: 12px;
   // display: block;
+  a:hover {
+    color: #0D253D;
+    text-decoration: none;
+  }
+  a {
+    color: #fff;
+  }
 }
 
 .small-btn:hover{
    background:#fff;
    box-shadow:0px 1px 1px 1px rgba(132, 96, 0, 0.2);
    color: #0D253D;
+   text-decoration: none;
 }
 
 .btn_home{
@@ -194,6 +202,44 @@
    color: #84161E;
 }
 
+// .musician-search-btn{
+//   margin-top: -10px;
+// }
+.search-btn{
+  background-color: #0D253D;
+  color: white;
+  border: none;
+  padding: 6px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  opacity: 1;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  overflow: hidden;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  text-transform: uppercase;
+  font-size: 12px;
+  // display: block;
+  a:hover {
+    color: #0D253D;
+    text-decoration: none;
+  }
+  a {
+    color: #fff;
+  }
+}
+
+.search-btn:hover{
+   background:#fff;
+   box-shadow:0px 1px 1px 1px rgba(132, 96, 0, 0.2);
+   color: #0D253D;
+   text-decoration: none;
+}
 .btn-center {
   position: absolute;
   right: 38%;
