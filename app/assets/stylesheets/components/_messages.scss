@@ -6,6 +6,7 @@
 .message {
   display: flex;
   flex-direction: column;
+  margin-bottom: 6px;
 }
 
 .message-text {
@@ -60,6 +61,10 @@ small {
   }
 }
 
+.chat-header {
+
+}
+
 #create-message {
   position: fixed;
   left: 0;
@@ -70,8 +75,15 @@ small {
   text-align: center;
 
   .input-container {
-    padding: 20px;
-
+    padding: 25px;
   }
-
 }
+
+.message small {
+  display: none;
+}
+
+.message:last-child small {
+  display: inline-block;
+}
+
