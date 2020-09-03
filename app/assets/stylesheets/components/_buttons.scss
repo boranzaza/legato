@@ -31,11 +31,11 @@
    color: #0D253D;
 }
 
-.btn-primary-ok {
+.btn-primary-ok-confirmation {
   background-color: #0D253D;
   color: white;
   border: none;
-  padding: 16px 60px 40px;
+  padding: 16px 60px;
   border-radius: 8px;
   font-weight: bold;
   opacity: 1;
@@ -57,7 +57,7 @@
   }
 }
 
-.btn-primary-ok:hover{
+.btn-primary-ok-confirmation:hover{
    background:#fff;
    box-shadow:0px 1px 1px 1px rgba(132, 96, 0, 0.2);
    color: #0D253D;
