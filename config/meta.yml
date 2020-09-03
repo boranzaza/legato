@@ -1,0 +1,5 @@
+meta_product_name: "Legato"
+meta_title: "Legato: Classical music concert, in your living room!"
+meta_description: "You have been deprived of classical music concerts for months now... Why not host a concert in the comfort of your living room? With Legato, you can easily find and book Montreal's finest classical musicians for private concerts, to serenade you and your loved ones! "
+meta_image: "logo.png" # should exist in `app/assets/images/`
+twitter_account: "@boran_zaza"   # required for Twitter Cards
