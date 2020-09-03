@@ -9,22 +9,16 @@
 
     <p><strong> Thank you for your interest in booking <%= @musician.full_name %> </strong></p>
     <hr>
-    <p><strong> Please choose a repertoire amongst the following options: </strong>
-      <br>
-      <br>
-      <strong>option 1: </strong><%= @musician.repertoire_1 %>
-      <br>
-      <strong>option 2: </strong><%= @musician.repertoire_2 %>
-    </p>
-    <hr>
 
     <%= simple_form_for @booking, url: user_bookings_path(current_user) do |f|%>
-       <%= f.input :musician_id, as: :string, input_html: { value: @musician.id, class: "d-none" }, label: false %>
-      <!-- ADD which repertoire would like them to perform -->
-      <%# f.input :repertoire, as: :radio_buttons, collection: [['0', @musician.repertoire_1], ['1', @musician.repertoire_2], label_method: :second, value_method: :first]%>
+      <%= f.input :musician_id, as: :string, input_html: { value: @musician.id, class: "d-none" }, label: false %>
+      <%= f.input :price, as: :integer, input_html: { value: @musician.price, class: "d-none" }, label: false %>
+      <div data-value="1" class="repertoire"><%= @musician.repertoire_1 %></div>
+      <div data-value="2" class="repertoire"><%= @musician.repertoire_2 %></div>
+      <%= hidden_field_tag "booking[repertoire_number]", "", id: "booking_repertoire_number" %>
       <%= f.input :repertoire_number %>
       <%= f.input :date_time, as: :date %>
-      <%= f.input :date_time, as: :time %>
+      <%= f.input :date_time, as: :time, :minute_step => 15 %>
       <%= f.input :location, as: :string, input_html: { value: current_user.address } %>
       <%= f.input :comments, as: :text %>
       <div class="row justify-content-center">

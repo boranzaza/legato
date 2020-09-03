@@ -45,7 +45,9 @@ class BookingsController < ApplicationController
       location: params[:booking][:location],
       comments: params[:booking][:comments],
       customer_id: current_user.id,
-      musician_id: params[:booking][:musician_id]})
+      musician_id: params[:booking][:musician_id],
+      price: params[:booking][:price].to_i
+    })
     @booking.customer_id = current_user.id
     if @booking.save
       redirect_to booking_path(@booking)
@@ -82,7 +84,7 @@ end
   private
 
   def booking_params
-    params.require(:booking).permit(:date_time, :status, :location, :comments, :customer_id, :musician_id, :repertoire_number)
+    params.require(:booking).permit(:date_time, :status, :location, :comments, :customer_id, :musician_id, :repertoire_number, :price)
   end
 
   def set_booking
