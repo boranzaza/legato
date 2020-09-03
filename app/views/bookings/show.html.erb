@@ -34,17 +34,18 @@
   </div>
   <br>
   <div>
-    <strong><a style="text-align: justify; color: #84161E">*Once <%= @booking.musician.full_name.upcase %> accept/s your booking,
-    you will be notified by email on <%= current_user.email %>.
-    In the meantime, you can reach <%= @booking.musician.full_name.upcase %> by phone on <%= @booking.musician.phone_number %>
-    if you have additional questions or comments.</a></strong>
+    <strong><a style="text-align: justify; color: #84161E">*Once <%= @booking.musician.full_name.upcase %> accepts your booking request
+    you will be notified by email at: <%= current_user.email %>.
+    In the meantime, you can reach <%= @booking.musician.full_name.upcase %> by phone at <%= @booking.musician.phone_number %>
+    if you have additional questions or comments. If you prefer, start a conversation below.</a></strong>
+    <hr>
   </div>
 
 <div>
   <% if current_user.is_musician %>
-    <%= link_to "Send a message to #{@booking.customer.full_name}", chatrooms_path %></p>
+    <%= link_to "Click here to send a message to #{@booking.customer.full_name}", chatrooms_path %></p>
   <% else %>
-    <%= link_to "Send a message to #{@booking.musician.full_name}", chatrooms_path %></p>
+    <%= link_to "Click here to send a message to #{@booking.musician.full_name}", chatrooms_path %></p>
   <% end %>
 </div>
 
