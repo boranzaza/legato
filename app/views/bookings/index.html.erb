@@ -64,7 +64,7 @@
                   <p><%= link_to 'Send a message', user_chatrooms_path(booking.musician), method: :post, class: "btn btn-send-message" %></p>
                 </div>
                 <div class="row justify-content-center">
-                  <p><%= link_to "CANCEL BOOKING", booking_path(booking), method: :delete, class: "btn btn-cancel-user-index" %></p>
+                  <%= link_to "CANCEL BOOKING", booking_path(booking), method: :delete, class: "btn btn-cancel-user-index" %>
                 </div>
               <% elsif booking.status == false %>
                 Respectfully Declined</p>
