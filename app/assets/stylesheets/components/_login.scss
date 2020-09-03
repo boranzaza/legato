@@ -1,10 +1,11 @@
 .form-login {
   background: white;
   padding: 10px 20px;
+  width: 100%;
   margin-top: 50px;
   color:  #0D253D;
   font-weight: 500;
-  ;
+
   .btn {
     width: 70%;
     margin-bottom: 40px;
@@ -16,7 +17,15 @@
   border-radius: 8px;
 }
 
+.container-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 44px;
+}
+
 h1 {
   color: #846000;
   font-weight: bold;
 }
+
