@@ -27,7 +27,7 @@
 
     <br>
 
-    <p><strong>Date and time:</strong> <%= @booking.date_time.strftime('%F at: %H:%M sharp!') %></p>
+    <p><strong>Date and time:</strong> <%= @booking.date_time.strftime('%A, %-d %B %Y, %H:%M') %></p>
     <p><strong>Address:</strong> <%= @booking.location %></p>
     <p><strong>Comments:</strong> <%= @booking.comments %></p>
     <p><strong>Price:</strong> $<%= User.find(@booking.musician_id).price %></p>
@@ -44,11 +44,12 @@
     if you have additional questions or comments. If you prefer, start a conversation below.</a></strong>
     <hr>
   </div>
-    
+
+
   <div class="row justify-content-center">
     <p> <%= link_to "OK", bookings_path, class: "btn btn-primary-ok-confirmation" %></p>
   </div>
-    
+
   <div class="row justify-content-center">
     <% if current_user.is_musician %>
       <p><%= link_to 'Send a message', user_chatrooms_path(@booking.customer), method: :post, class: "btn btn-send-message" %></p>

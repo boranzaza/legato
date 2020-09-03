@@ -9,9 +9,7 @@ Booking.destroy_all
 User.destroy_all
 Review.destroy_all
 
-puts "creating customers"
-
-
+puts "Creating customers..."
 
 #here is our persona:
 nancy_shapiro = User.create!(first_name: "Nancy",
@@ -336,9 +334,9 @@ julien_leblanc = User.create!(first_name: "Julien",
                             is_musician: true,
 )
 
+puts "Musicians successfully created!"
 
-puts "musicians created"
-puts "creating reviews"
+puts "Creating reviews..."
 
 #here are the reviews of our 7 customers:
 aaron_sherbatsky = Review.create!(rating: 5,
@@ -383,8 +381,9 @@ fanny_beauregard = Review.create!(rating: 4,
                         musician_id: 9,
 )
 
-puts "reviews created"
+puts "Reviews were created!"
 
+puts "Booking musician..."
 
 Booking.create!(customer: nancy_shapiro,
                 musician: boran_zaza,
@@ -393,6 +392,10 @@ Booking.create!(customer: nancy_shapiro,
                 status: "pending",
                 location:"1000 The Boulevard, Westmount, Canada, B9C9D9",
                 comments:"Are you allergic to cats?",
+                price: 500
 )
 
+puts "Boran has been booked by Nancy for a safe, socially distanced at-home concert!"
+
+puts "Seed done."
 
