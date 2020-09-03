@@ -55,7 +55,7 @@
           <p><strong>Date and time: </strong><%= booking.date_time.strftime('%F at: %H:%M sharp!') %></p>
           <p><strong>Address: </strong><%= booking.location %></p>
           <p><strong>Comments: </strong><%= booking.comments %></p>
-          <p><strong>Price: </strong><%= User.find(booking.musician_id).price %> $</p>
+          <p><strong>Price: </strong>$<%= User.find(booking.musician_id).price %></p>
 
             <p><strong>Booking status:</strong>
               <% if booking.status == true %>
