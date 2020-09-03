@@ -1,9 +1,9 @@
 class ChatroomsController < ApplicationController
   def index
     if current_user.is_musician
-      @chatrooms = Chatroom.where(musician_id: current_user.id)
+      @chatrooms = Chatroom.where(musician_id: current_user.id).order(created_at: :desc)
     else
-      @chatrooms = Chatroom.where(customer_id: current_user.id)
+      @chatrooms = Chatroom.where(customer_id: current_user.id).order(created_at: :desc)
     end
   end
 

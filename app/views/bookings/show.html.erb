@@ -24,7 +24,9 @@
         <p><strong>Repertoire:</strong> <%= @booking.repertoire_name %> | <%= @booking.repertoire_length %> minutes </p>
       </div>
     </div>
+
     <br>
+
     <p><strong>Date and time:</strong> <%= @booking.date_time.strftime('%A, %-d %B %Y, %H:%M') %></p>
     <p><strong>Address:</strong> <%= @booking.location %></p>
     <p><strong>Comments:</strong> <%= @booking.comments %></p>
@@ -32,13 +34,17 @@
     <p><strong>Booking status:</strong> PENDING</p>
 
   </div>
+
   <br>
+
   <div>
-    <strong><a style="text-align: justify; color: #84161E">*Once <%= @booking.musician.full_name.upcase %> accept/s your booking,
-    you will be notified by email on <%= current_user.email %>.
-    In the meantime, you can reach <%= @booking.musician.full_name.upcase %> by phone on <%= @booking.musician.phone_number %>
-    if you have additional questions or comments.</a></strong>
+    <strong><a style="text-align: justify; color: #84161E">* Once <%= @booking.musician.full_name.upcase %> accepts your booking request
+    you will be notified by email at: <%= current_user.email %>.
+    In the meantime, you can reach <%= @booking.musician.full_name.upcase %> by phone at <%= @booking.musician.phone_number %>
+    if you have additional questions or comments. If you prefer, start a conversation below.</a></strong>
+    <hr>
   </div>
+
 
   <div class="row justify-content-center">
     <p> <%= link_to "OK", bookings_path, class: "btn btn-primary-ok-confirmation" %></p>
@@ -52,11 +58,10 @@
     <% end %>
   </div>
 
-
   <div class="row justify-content-center">
     <button type="button" class="btn-cancel" data-toggle="modal" data-target="#exampleModal">
       <div>
-        I made this booking by mistake. Cancel booking
+        I made this booking by mistake. Cancel booking!
         <!-- Launch demo modal -->
       </div>
     </button>
