@@ -27,11 +27,13 @@ import "bootstrap";
 // Internal imports, e.g:
 import { initChatroomCable } from '../channels/chatroom_channel';
 import { ratingStars } from '../plugins/rating';
+import { chooseRepertoire } from '../plugins/choose_repertoire';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initChatroomCable();
   ratingStars();
+  chooseRepertoire();
 });
 

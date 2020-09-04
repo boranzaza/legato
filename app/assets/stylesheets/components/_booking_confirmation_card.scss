@@ -32,3 +32,48 @@
 .booking-requests-card .booking-requests-card-infos {
   padding: 16px;
 }
+
+
+.repertoire-container {
+  width: 100%;
+}
+
+.repertoire {
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  margin: auto;
+  text-align: center;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  align-content: space-between;
+  p {
+    margin: 0;
+    padding: 0;
+    color: #0D253D;
+  }
+  h5 {
+    border-bottom: 1px solid #000;
+    padding-bottom: 6px;
+    color: #84161E;
+  }
+
+
+}
+
+.repertoire-chosen {
+  background-color: rgba(134, 98, 0, 0.37);
+  p {
+    color: #FFFFFF;
+  }
+}
+
+.date-time-container {
+ display: flex;
+}
+
+.booking_date_time {
+  width: 50%;
+ }

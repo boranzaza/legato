@@ -13,12 +13,24 @@
     <%= simple_form_for @booking, url: user_bookings_path(current_user) do |f|%>
       <%= f.input :musician_id, as: :string, input_html: { value: @musician.id, class: "d-none" }, label: false %>
       <%= f.input :price, as: :integer, input_html: { value: @musician.price, class: "d-none" }, label: false %>
-      <div data-value="1" class="repertoire"><%= @musician.repertoire_1 %></div>
-      <div data-value="2" class="repertoire"><%= @musician.repertoire_2 %></div>
-      <%= hidden_field_tag "booking[repertoire_number]", "", id: "booking_repertoire_number" %>
-      <%= f.input :repertoire_number, as: :integer %>
-      <%= f.input :date_time, label: "Date", as: :date, start_year: Time.now.year, end_year: Time.now.year + 5, html5: true,  order: [:day, :month, :year] %>
-      <%= f.input :date_time, label: "Time", as: :time, :minute_step => 15 %>
+      <p>Please choose the repertoire you prefer.</p>
+      <div class="repertoire-container justify-content-center d-flex">
+        <div data-value="1" class="repertoire" id="repertoire1">
+          <h5>REPERTOIRE 1</h5>
+          <p><strong><%= @musician.repertoire_1 %></strong></p>
+        </div>
+        <div data-value="2" class="repertoire" id="repertoire2">
+          <h5>REPERTOIRE 2</h5>
+          <p><strong><%= @musician.repertoire_2 %></strong></p>
+        </div>
+      </div>
+      <%= f.input :repertoire_number, as: :integer, input_html: { id: "booking_repertoire_number", class: "d-none" }, label: false %>
+
+      <div class="date-time-container">
+        <%= f.input :date_time, label: "Date", as: :date, start_year: Time.now.year, end_year: Time.now.year + 5, html5: true,  order: [:day, :month, :year] %>
+        <%= f.input :date_time, label: "Time", as: :time, :minute_step => 15 %>
+      </div>
+
       <%= f.input :location, as: :string, input_html: { value: current_user.address } %>
       <%= f.input :comments, as: :text %>
       <div class="row justify-content-center">
