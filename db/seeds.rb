@@ -5,9 +5,16 @@
 #
 #   movies = Movie.create([ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+Message.destroy_all
+Chatroom.destroy_all
+Review.destroy_all
 Booking.destroy_all
 User.destroy_all
-Review.destroy_all
+
+
+require 'date'
 
 puts "Creating customers..."
 
@@ -339,61 +346,73 @@ puts "Musicians successfully created!"
 puts "Creating reviews..."
 
 #here are the reviews of our 7 customers:
-aaron_sherbatsky = Review.create!(rating: 5,
-                        content: "Fabulous musician!! My guests were very impressed!",
-                        customer_id: 2,
-                        musician_id: 10,
+Review.create!(rating: 5,
+                content: "Fabulous musician!! My guests were very impressed!",
+                customer: aaron_sherbatsky,
+                musician: michel_alexandre_broekaert,
 )
 
-bedros_babadjanian = Review.create!(rating: 5,
-                      content: "This moment of music changed my life! What an amazing musician!",
-                      customer_id: 3,
-                      musician_id: 10,
+Review.create!(rating: 5,
+                content: "This moment of music changed my life! What an amazing musician!",
+                customer: bedros_babadjanian,
+                musician: michel_alexandre_broekaert,
 )
 
-charles_péloquin = Review.create!(rating: 5,
-                          content: "I appreciated very much this pianist; we all had a wonderful moment. I strongly recommend him!",
-                          customer_id: 4,
-                          musician_id: 10,
+Review.create!(rating: 5,
+                content: "I appreciated very much this pianist; we all had a wonderful moment. I strongly recommend him!",
+                customer: charles_péloquin,
+                musician: michel_alexandre_broekaert,
 )
 
-david_bordeleau = Review.create!(rating: 5,
-                        content: "Wow wow wow!! I hired this pianist as a surprise for my wife's birthday! Now I'm husband of the year!! What an extraordinary musician!!!!",
-                        customer_id: 5,
-                        musician_id: 10,
+Review.create!(rating: 5,
+                content: "Wow wow wow!! I hired this pianist as a surprise for my wife's birthday! Now I'm husband of the year!! What an extraordinary musician!!!!",
+                customer: david_bordeleau,
+                musician: michel_alexandre_broekaert,
 )
 
-edward_longshire = Review.create!(rating: 3,
-                        content: "It was good, but I've seen better...",
-                        customer_id: 6,
-                        musician_id: 9,
+Review.create!(rating: 3,
+                content: "It was good, but I've seen better...",
+                customer: edward_longshire,
+                musician: boran_zaza,
 )
 
-edwidge_seinfeld = Review.create!(rating: 2,
-                          content: "Arrived late. I was not impressed..",
-                          customer_id: 7,
-                          musician_id: 9,
+Review.create!(rating: 2,
+                content: "Arrived late. I was not impressed..",
+                customer: edwidge_seinfeld,
+                musician: boran_zaza,
 )
 
-fanny_beauregard = Review.create!(rating: 4,
-                        content: "Good performance, I guess..",
-                        customer_id: 8,
-                        musician_id: 9,
+Review.create!(rating: 4,
+                content: "Good performance, I guess..",
+                customer: fanny_beauregard,
+                musician: boran_zaza,
 )
 
 puts "Reviews were created!"
 
 puts "Booking musician..."
 
-Booking.create!(customer: nancy_shapiro,
-                musician: boran_zaza,
-                date_time: 1.day.ago,
+# Booking.create!(customer: nancy_shapiro,
+#                 musician: boran_zaza,
+#                 date_time: 1.day.ago,
+#                 repertoire_number: 1,
+#                 status: "pending",
+#                 location:"1000 The Boulevard, Westmount, Canada, B9C9D9",
+#                 comments:"Are you allergic to cats?",
+#                 price: 500
+# )
+
+
+Booking.create!(customer: aaron_sherbatsky,
+                musician: michel_alexandre_broekaert,
+                date_time: DateTime.new(2020, 9, 8, 13, 0, 0, DateTime.now.zone),
                 repertoire_number: 1,
                 status: "pending",
-                location:"1000 The Boulevard, Westmount, Canada, B9C9D9",
-                comments:"Are you allergic to cats?",
-                price: 500
+                location: "54 Sherbrooke, Westmount, Canada, C9C9D9",
+                comments: "I hope you can make it!",
+                price: 400
 )
+
 
 puts "Boran has been booked by Nancy for a safe, socially distanced at-home concert!"
 
