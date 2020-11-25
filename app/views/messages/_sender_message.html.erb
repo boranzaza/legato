@@ -1,0 +1,6 @@
+<div class="message is-current-user-false" id="message-<%= message.id %>" data-user="<% message.user %>">
+  <div class="message-text">
+    <%= message.content %>
+  </div>
+  <small><%= time_ago_in_words(message.created_at) %> ago</small>
+</div>

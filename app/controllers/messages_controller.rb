@@ -4,13 +4,17 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.chatroom = @chatroom
     @message.user = current_user
-    if @message.save
-      # Sending message to the channel.
+
+    if @message.save 
       ChatroomChannel.broadcast_to(
         @chatroom,
-        render_to_string(partial: "message", locals: { message: @message })
+        { sender_card: render_to_string(partial: "sender_message", locals: { message: @message, user: current_user }),
+          receiver_card: render_to_string(partial: "receiver_message", locals: { message: @message, user: current_user }),
+         senderId: current_user.id
+        }
       )
       redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
+
     else
       render "chatrooms/show"
     end
