@@ -25,9 +25,6 @@ class ChatroomsController < ApplicationController
     redirect_to chatroom_path(@chatroom)
   end
 
-  # def destroy
-  # end
-
   private
 
   def chatroom_params
